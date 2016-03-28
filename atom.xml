@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://controlspace.info/"/>
-  <updated>2016-03-27T18:19:19.000Z</updated>
+  <updated>2016-03-28T17:08:29.851Z</updated>
   <id>http://controlspace.info/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://controlspace.info/2016/03/patch-utility-for-perforce/"/>
     <id>http://controlspace.info/2016/03/patch-utility-for-perforce/</id>
     <published>2016-03-08T18:13:41.000Z</published>
-    <updated>2016-03-27T18:19:19.000Z</updated>
+    <updated>2016-03-28T17:08:29.851Z</updated>
     
     <content type="html">&lt;p&gt;Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.&lt;/p&gt;
 &lt;p&gt;I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. &lt;code&gt;p4 diff&lt;/code&gt; helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard.&lt;br&gt;To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.&lt;/p&gt;
@@ -51,7 +51,7 @@
     <link href="http://controlspace.info/2016/03/hello-world-for-oracle-commerce/"/>
     <id>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</id>
     <published>2016-03-06T18:13:41.000Z</published>
-    <updated>2016-03-27T16:41:05.000Z</updated>
+    <updated>2016-03-28T17:08:29.851Z</updated>
     
     <content type="html">&lt;p&gt;There are so many concepts in Oracle Commerce (previously known as ATG), that makes coming up with Hello World program little difficult. Do you mean to create one JSP page and deploy it like commerce reference store? Do you want to create a component just to see in Dyn/Admin? Do you want to create a hello world repository? Depending on what you want to do, the approach to take will be different.&lt;br&gt;people_meaphor_options_gray&lt;br&gt;To work with Oracle Commerce, you don’t have to know about persisting data in database. If you approach Oracle Commerce programming with J2EE &amp;amp; MVC experience, you may find it little difficult to cope with it unless you start with a fresh mind, because things are very different in this platform.&lt;/p&gt;
 &lt;p&gt;Today, I will demonstrate how to create a simple component so that it can be viewed in Dyn/Admin. Let us assume that you are trying to create it in your own module instead of existing module like DAS or DAF. Follow the the steps shown below.&lt;/p&gt;

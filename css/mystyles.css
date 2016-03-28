@@ -39,3 +39,7 @@
 #header-outer {
   height: initial;
 }
+
+#banner {
+  background: center #000;
+}
