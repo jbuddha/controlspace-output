@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://controlspace.info/"/>
-  <updated>2016-03-28T17:08:29.851Z</updated>
+  <updated>2016-03-28T17:58:41.000Z</updated>
   <id>http://controlspace.info/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://controlspace.info/2016/03/patch-utility-for-perforce/"/>
     <id>http://controlspace.info/2016/03/patch-utility-for-perforce/</id>
     <published>2016-03-08T18:13:41.000Z</published>
-    <updated>2016-03-28T17:08:29.851Z</updated>
+    <updated>2016-03-28T17:58:41.000Z</updated>
     
     <content type="html">&lt;p&gt;Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.&lt;/p&gt;
 &lt;p&gt;I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. &lt;code&gt;p4 diff&lt;/code&gt; helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard.&lt;br&gt;To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.&lt;/p&gt;
