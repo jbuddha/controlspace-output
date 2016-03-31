@@ -1144,8 +1144,8 @@ a.article-title:hover {
   padding: 0;
 }
 .article-entry .highlight figcaption {
-  font-size: 0.85em;
-  color: #999;
+  font-size: 1.5em;
+  color: #ccc;
   line-height: 1em;
   margin-bottom: 1em;
 }
