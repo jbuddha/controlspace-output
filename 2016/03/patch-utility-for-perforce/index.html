@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://farm2.staticflickr.com/1441/25563016955_8a691e760b_n.jpg">
 <meta property="og:image" content="https://farm2.staticflickr.com/1626/25596793045_91c403dfd9_z.jpg">
 <meta property="og:image" content="https://farm2.staticflickr.com/1501/25229331639_f3324f01b4_z.jpg">
-<meta property="og:updated_time" content="2016-03-31T18:36:56.000Z">
+<meta property="og:updated_time" content="2016-03-31T19:08:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Open Source Patch Utility For Perforce">
 <meta name="twitter:description" content="Introduction to an opensource utility for generating patch files for pending changelists in perforce version controlling system">
@@ -90,7 +90,7 @@ ga('send', 'pageview');
         <section id="main"><article id="post-2016/03/patch-utility-for-perforce" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/patch-utility-for-perforce/" class="article-date" style="text-transform: none;">
-  <time datetime="2016-03-08T18:13:41.000Z" itemprop="datePublished">2016-03-08</time>
+  <time datetime="2016-03-07T18:30:00.000Z" itemprop="datePublished">2016-03-08</time>
   
       - Buddha
   
@@ -117,33 +117,40 @@ ga('send', 'pageview');
       
   <header class="article-header">
     
-      <a href="https://github.com/jbuddha/perforce-patcher/blob/master/dist/perforce-patcher.jar?raw=true"><i class="fa fa-cloud-download fa-5x"></i></a>
+      <a href="https://github.com/jbuddha/perforce-patcher/blob/master/dist/perforce-patcher.jar?raw=true" style="padding: 2em;"><i class="fa fa-cloud-download fa-5x" title="Download"></i></a>
     
     
-        <a href="https://github.com/jbuddha/perforce-patcher"><i class="fa fa-github fa-5x"></i></a>
+      
+        <a href="https://github.com/jbuddha/perforce-patcher"><i class="fa fa-github fa-5x" title="Fork at Github repository"></i></a>
+      
+      
     
   </header>
 
 
 
       
-        <p>Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.<br><img src="https://farm2.staticflickr.com/1441/25563016955_8a691e760b_n.jpg" alt="Where is my patch?"><br>I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. <code>p4 diff</code> helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard.<br>To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.<br><a id="more"></a></p>
+        <p>Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.<br><img src="https://farm2.staticflickr.com/1441/25563016955_8a691e760b_n.jpg" alt="Where is my patch?"><br>I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. <code>p4 diff</code> helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard. To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.<br><a id="more"></a></p>
+<p>First step is to download the jar file. Click on the download button at the beginning or ending of the article. Just double click the jar file to run it.<br><div class="admonition warning"><p class="admonition-title">Watchout</p><p>You Need JRE 8 to run this without any additional configuration. If you are using JRE 7, please keep jfxrt.jar in class path or simply copy it to your jre/lib/ext folder. jfxrt.jar is available inside your {jre or jdk}/lib folder.</p></div></p>
 <p>Upon opening the application you will be presented with the login screen. Login with your regular perforce credentials, deselect Remember me, if you don’t want to store the data entered by you locally. By leaving the default value your credentials will be saved in the application cache so that you need not enter it again.<br><img src="https://farm2.staticflickr.com/1626/25596793045_91c403dfd9_z.jpg" alt="Login Pane"></p>
 <p> If the login is successful, you will be taken to the next screen otherwise check the Log pane for error. Select the local perforce workspace name and the change list id and click Generate Patch button and save the file at your preferred location through the Save dialog which pops up.<br><img src="https://farm2.staticflickr.com/1501/25229331639_f3324f01b4_z.jpg" alt="Patch Generation Pane"><br><div class="admonition info"><p class="admonition-title">Note</p><p>You will be logged out upon closing the application automatically.You can download the utility as a runnable jar from the github repository folder.</p></div></p>
 <p>You can find the project and its source in github. If you like the project, and want to contribute by adding more features, please fork the github repo. It is a maven project so building it is as quick as a wink.</p>
-<div class="admonition warning"><p class="admonition-title">Watchout</p><p>You Need JRE 8 to run this without any additional configuration. If you are using JRE 7, please keep jfxrt.jar in class path or simply copy it to your jre/lib/ext folder. jfxrt.jar is available inside your {jre or jdk}/lib folder.</p></div>
 
-      
-      
+        
   <header class="article-header">
     
-      <a href="https://github.com/jbuddha/perforce-patcher/blob/master/dist/perforce-patcher.jar?raw=true"><i class="fa fa-cloud-download fa-5x"></i></a>
+      <a href="https://github.com/jbuddha/perforce-patcher/blob/master/dist/perforce-patcher.jar?raw=true" style="padding: 2em;"><i class="fa fa-cloud-download fa-5x" title="Download"></i></a>
     
     
-        <a href="https://github.com/jbuddha/perforce-patcher"><i class="fa fa-github fa-5x"></i></a>
+      
+        <a href="https://github.com/jbuddha/perforce-patcher"><i class="fa fa-github fa-5x" title="Fork at Github repository"></i></a>
+      
+      
     
   </header>
 
+
+      
 
     </div>
     <footer class="article-footer">

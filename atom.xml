@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://controlspace.info/"/>
-  <updated>2016-03-31T18:36:56.000Z</updated>
+  <updated>2016-03-31T19:08:25.000Z</updated>
   <id>http://controlspace.info/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <title>Open Source Patch Utility For Perforce</title>
     <link href="http://controlspace.info/2016/03/patch-utility-for-perforce/"/>
     <id>http://controlspace.info/2016/03/patch-utility-for-perforce/</id>
-    <published>2016-03-08T18:13:41.000Z</published>
-    <updated>2016-03-31T18:36:56.000Z</updated>
+    <published>2016-03-07T18:30:00.000Z</published>
+    <updated>2016-03-31T19:08:25.000Z</updated>
     
-    <content type="html">&lt;p&gt;Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1441/25563016955_8a691e760b_n.jpg&quot; alt=&quot;Where is my patch?&quot;&gt;&lt;br&gt;I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. &lt;code&gt;p4 diff&lt;/code&gt; helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard.&lt;br&gt;To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1441/25563016955_8a691e760b_n.jpg&quot; alt=&quot;Where is my patch?&quot;&gt;&lt;br&gt;I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. &lt;code&gt;p4 diff&lt;/code&gt; helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard. To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;First step is to download the jar file. Click on the download button at the beginning or ending of the article. Just double click the jar file to run it.&lt;br&gt;&lt;div class=&quot;admonition warning&quot;&gt;&lt;p class=&quot;admonition-title&quot;&gt;Watchout&lt;/p&gt;&lt;p&gt;You Need JRE 8 to run this without any additional configuration. If you are using JRE 7, please keep jfxrt.jar in class path or simply copy it to your jre/lib/ext folder. jfxrt.jar is available inside your {jre or jdk}/lib folder.&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;Upon opening the application you will be presented with the login screen. Login with your regular perforce credentials, deselect Remember me, if you don’t want to store the data entered by you locally. By leaving the default value your credentials will be saved in the application cache so that you need not enter it again.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1626/25596793045_91c403dfd9_z.jpg&quot; alt=&quot;Login Pane&quot;&gt;&lt;/p&gt;
 &lt;p&gt; If the login is successful, you will be taken to the next screen otherwise check the Log pane for error. Select the local perforce workspace name and the change list id and click Generate Patch button and save the file at your preferred location through the Save dialog which pops up.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1501/25229331639_f3324f01b4_z.jpg&quot; alt=&quot;Patch Generation Pane&quot;&gt;&lt;br&gt;&lt;div class=&quot;admonition info&quot;&gt;&lt;p class=&quot;admonition-title&quot;&gt;Note&lt;/p&gt;&lt;p&gt;You will be logged out upon closing the application automatically.You can download the utility as a runnable jar from the github repository folder.&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;
 &lt;p&gt;You can find the project and its source in github. If you like the project, and want to contribute by adding more features, please fork the github repo. It is a maven project so building it is as quick as a wink.&lt;/p&gt;
-&lt;div class=&quot;admonition warning&quot;&gt;&lt;p class=&quot;admonition-title&quot;&gt;Watchout&lt;/p&gt;&lt;p&gt;You Need JRE 8 to run this without any additional configuration. If you are using JRE 7, please keep jfxrt.jar in class path or simply copy it to your jre/lib/ext folder. jfxrt.jar is available inside your {jre or jdk}/lib folder.&lt;/p&gt;&lt;/div&gt;
 </content>
     
     <summary type="html">
@@ -50,8 +50,8 @@
     <title>Hello World for Oracle Commerce (ATG)</title>
     <link href="http://controlspace.info/2016/03/hello-world-for-oracle-commerce/"/>
     <id>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</id>
-    <published>2016-03-06T18:13:41.000Z</published>
-    <updated>2016-03-31T18:09:01.000Z</updated>
+    <published>2016-03-05T18:30:00.000Z</published>
+    <updated>2016-03-31T18:51:10.000Z</updated>
     
     <content type="html">&lt;p&gt;There are so many concepts in Oracle Commerce (previously known as ATG), that makes coming up with Hello World program little difficult. Do you mean to create one JSP page and deploy it like commerce reference store? Do you want to create a component just to see in Dyn/Admin? Do you want to create a hello world repository? Depending on what you want to do, the approach to take will be different.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1633/25195316629_65c8162a37_n.jpg&quot; alt=&quot;Too many options to begin with&quot;&gt;&lt;br&gt;To work with Oracle Commerce, you don’t have to know about persisting data in database. If you approach Oracle Commerce programming with J2EE &amp;amp; MVC experience, you may find it little difficult to cope with it unless you start with a fresh mind, because things are very different in this platform.&lt;/p&gt;
 &lt;p&gt;Today, I will demonstrate how to create a simple component so that it can be viewed in Dyn/Admin. Let us assume that you are trying to create it in your own module instead of existing module like DAS or DAF. Follow the the steps shown below.&lt;/p&gt;
@@ -76,9 +76,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;There are so many concepts in Oracle Commerce (previously known as ATG), that makes coming up with Hello World program little difficult. Do you mean to create one JSP page and deploy it like commerce reference store? Do you want to create a component just to see in Dyn/Admin? Do you want to create a hello world repository? Depending on what you want to do, the approach to take will be different.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1633/25195316629_65c8162a37_n.jpg&quot; alt=&quot;Too many options to begin with&quot;&gt;&lt;br&gt;To work with Oracle Commerce, you don’t have to know about persisting data in database. If you approach Oracle Commerce programming with J2EE &amp;amp; MVC experience, you may find it little difficult to cope with it unless you start with a fresh mind, because things are very different in this platform.&lt;/p&gt;
-&lt;p&gt;Today, I will demonstrate how to create a simple component so that it can be viewed in Dyn/Admin. Let us assume that you are trying to create it in your own module instead of existing module like DAS or DAF. Follow the the steps shown below.&lt;/p&gt;
-&lt;h2 id=&quot;Step-1-Create-an-Eclipse-project&quot;&gt;&lt;a href=&quot;#Step-1-Create-an-Eclipse-project&quot; class=&quot;headerlink&quot; title=&quot;Step 1: Create an Eclipse project&quot;&gt;&lt;/a&gt;Step 1: Create an Eclipse project&lt;/h2&gt;&lt;p&gt;Create an Eclipse project and make sure you add all the necessary class files to the build path. Add classes.jar or DAS at the least.&lt;br&gt;
+      Oracle Commerce or ATG is an Ocean. Beginning it is so difficult. There are so many new things to learn before you can write a program that runs on this platform. This article helps you learn how to begin with creating new components in Oracle Commerce.
     
     </summary>
     
