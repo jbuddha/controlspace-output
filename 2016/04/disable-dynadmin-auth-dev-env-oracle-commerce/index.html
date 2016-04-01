@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Disable DynAdmin authentication of Oracle Commerce | Ctrl+Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Couple of handy dandy tricks for bypassing the authentication mechanism of Dyn Admin for a quick opening of it.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Disable DynAdmin authentication of Oracle Commerce">
+<meta property="og:url" content="http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/index.html">
+<meta property="og:site_name" content="Ctrl+Space">
+<meta property="og:description" content="Couple of handy dandy tricks for bypassing the authentication mechanism of Dyn Admin for a quick opening of it.">
+<meta property="og:updated_time" content="2016-04-01T18:33:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Disable DynAdmin authentication of Oracle Commerce">
+<meta name="twitter:description" content="Couple of handy dandy tricks for bypassing the authentication mechanism of Dyn Admin for a quick opening of it.">
+  
+    <link rel="alternate" href="/atom.xml" title="Ctrl+Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75818367-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ctrl+Space</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The Intellisense Every Programmer Needs</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://controlspace.info"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2016/04/disable-dynadmin-auth-dev-env-oracle-commerce" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-03-31T18:30:00.000Z" itemprop="datePublished">2016-04-01</time>
+  
+      - Buddha
+  
+</a>
+
+      
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Disable DynAdmin authentication of Oracle Commerce
+    </h1>
+  
+
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+
+
+      
+        <p>We use Dyn/Admin for many of the development related tasks of Oracle Commerce(ATG). However, the log-in ticket expires too frequently forcing us to enter credentials repeatedly. Some times we will also have to give both application server(weblogic/jboss) credentials and dynamo administration credentials. As we are not in a production critical environment where multiple people may access our DynAdmin and create issues, it is not necessary to have this security check every time we try to open DynAdmin of our development environment. I have found following solutions to be free of this issue. This can come in handy when we are doing active development and have to frequently access dynamo administration.</p>
+<h2 id="Solution-1-Enable-lazyAthentication"><a href="#Solution-1-Enable-lazyAthentication" class="headerlink" title="Solution 1 - Enable lazyAthentication"></a>Solution 1 - Enable lazyAthentication</h2><p>This approach works by enabling Lazy Athentication which means login will only be asked once per session. This means, as long as the session is not expired, dyn/admin will not ask for credentials again. <a id="more"></a>I have observed that this means a very long time. Sometimes even the the authentication credentials are not asked after restarting the server. Follow the below steps to enable lazyAthentication.</p>
+<ol>
+<li>Navigate to %DYNAMO_HOME%/localconfig/atg/dynamo</li>
+<li>Create a folder named servlet if it doesn’t already exist</li>
+<li>Create a folder named adminpipeline inside servlet folder if it doesn’t already exist</li>
+<li>Create a properties files with the name Authenticator.properties with below content in it and restart the server.</li>
+</ol>
+<figure class="highlight java"><figcaption><span>atg/dynamo/servlet/adminpipeline/Authenticator.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$<span class="class"><span class="keyword">class</span></span>=atg.servlet.pipeline.UserAuthorityAuthenticator</span><br><span class="line">$scope=global</span><br><span class="line">lazyAthentication=<span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Solution-2-Disable-AuthenticationServlet"><a href="#Solution-2-Disable-AuthenticationServlet" class="headerlink" title="Solution 2 - Disable AuthenticationServlet"></a>Solution 2 - Disable AuthenticationServlet</h2><p>First solution provides respite from entering DynAdmin credentials frequently, however we still have to enter it once per session. Here is a better approach, my personal favourite. If we would like to disable the authentication for much longer period, we can disable authentication altogether, it can be acheived by disabling AuthenticationServlet component. Below approach can be followed for achieving that.</p>
+<ol>
+<li>Navigate to %DYNAMO_HOME%/localconfig/atg/dynamo</li>
+<li>Create a folder named servlet if it doesn’t already exist</li>
+<li>Create a folder named adminpipeline inside servlet folder if it doesn’t already exist</li>
+<li>Create a properties files with the name AuthenticationServlet.properties with below content in it and restart the server.</li>
+</ol>
+<figure class="highlight java"><figcaption><span>atg/dynamo/servlet/adminpipeline/AuthenticationServlet.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$<span class="class"><span class="keyword">class</span></span>=atg.servlet.pipeline.BasicAuthenticationPipelineServlet</span><br><span class="line">enabled=<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+<p>Authentication can be enabled again by changing enabled=true in AuthenticationServlet.properties.</p>
+<div class="admonition warning"><p class="admonition-title">Watchout</p><p>It is a good idea to disable lazyAthentication and enable AuthenticationServlet component when testing some authentication related tests. Neither of the approaches have been tested with LDAP or other authentication mechanisms.</p></div>
+
+        
+
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/" data-id="cimi0iuce0000nhzap5ek6fbk" class="article-share-link">Partager</a>
+        
+          <a href="http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/#disqus_thread" class="article-comment-link">Commentaires</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atg/">atg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/configuration/">configuration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hack/">hack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oraclecommerce/">oraclecommerce</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/patch-utility-for-perforce/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Open Source Patch Utility For Perforce</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/atg/" style="font-size: 20px;">atg</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 20px;">oraclecommerce</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/">Disable DynAdmin authentication of Oracle Commerce</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/patch-utility-for-perforce/">Open Source Patch Utility For Perforce</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/hello-world-for-oracle-commerce/">Hello World for Oracle Commerce (ATG)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Buddha Jyothiprasad<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'controlspace';
+  
+  var disqus_url = 'http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<link rel="stylesheet" href="/css/mystyles.css">
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
