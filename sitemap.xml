@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://controlspace.info/css/mystyles.css</loc>
+    
+    <lastmod>2016-04-02T06:06:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://controlspace.info/about/index.html</loc>
     
     <lastmod>2016-04-01T19:19:30.000Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</loc>
     
     <lastmod>2016-03-31T18:51:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://controlspace.info/css/mystyles.css</loc>
-    
-    <lastmod>2016-03-28T17:58:41.000Z</lastmod>
     
   </url>
   
