@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</loc>
+    
+    <lastmod>2016-04-13T18:13:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://controlspace.info/css/mystyles.css</loc>
     
     <lastmod>2016-04-02T06:06:22.000Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://controlspace.info/2016/03/patch-utility-for-perforce/</loc>
     
     <lastmod>2016-03-31T21:34:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</loc>
-    
-    <lastmod>2016-03-31T18:51:10.000Z</lastmod>
     
   </url>
   
