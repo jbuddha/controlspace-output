@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://controlspace.info/2016/04/solving-jam-coins/</loc>
+    
+    <lastmod>2016-04-14T19:43:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</loc>
     
     <lastmod>2016-04-13T18:13:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/</loc>
+    
+    <lastmod>2016-04-02T11:06:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://controlspace.info/2016/03/patch-utility-for-perforce/</loc>
+    
+    <lastmod>2016-04-02T11:06:39.000Z</lastmod>
     
   </url>
   
@@ -19,20 +40,6 @@
     <loc>http://controlspace.info/about/index.html</loc>
     
     <lastmod>2016-04-01T19:19:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/</loc>
-    
-    <lastmod>2016-04-01T18:33:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://controlspace.info/2016/03/patch-utility-for-perforce/</loc>
-    
-    <lastmod>2016-03-31T21:34:58.000Z</lastmod>
     
   </url>
   

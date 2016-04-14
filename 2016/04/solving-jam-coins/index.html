@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- for bing's convenience -->
+  <meta name="msvalidate.01" content="18487D0B4A4C57C561C46743ED26C1CA" />
+  
+  <title>Generating the Jam Coins | Ctrl+Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Jam Coins is an interesting problem which gives a glimpse into another popular virtual currency, bit coin mining. Here, I&apos;m going to show you how to solve both small as well as large datasets within t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Generating the Jam Coins">
+<meta property="og:url" content="http://controlspace.info/2016/04/solving-jam-coins/index.html">
+<meta property="og:site_name" content="Ctrl+Space">
+<meta property="og:description" content="Jam Coins is an interesting problem which gives a glimpse into another popular virtual currency, bit coin mining. Here, I&apos;m going to show you how to solve both small as well as large datasets within t">
+<meta property="og:image" content="https://farm2.staticflickr.com/1638/25470220981_c6d315ac60_m.jpg">
+<meta property="og:image" content="https://farm2.staticflickr.com/1561/25195430059_5a59d15b1a_n.jpg">
+<meta property="og:image" content="https://farm2.staticflickr.com/1593/25562936785_01a1831fc9_m.jpg">
+<meta property="og:updated_time" content="2016-04-14T19:43:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Generating the Jam Coins">
+<meta name="twitter:description" content="Jam Coins is an interesting problem which gives a glimpse into another popular virtual currency, bit coin mining. Here, I&apos;m going to show you how to solve both small as well as large datasets within t">
+<meta name="twitter:image" content="https://farm2.staticflickr.com/1638/25470220981_c6d315ac60_m.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Ctrl+Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75818367-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ctrl+Space</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The Intellisense Every Programmer Needs</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://controlspace.info"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2016/04/solving-jam-coins" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/solving-jam-coins/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-04-11T18:30:00.000Z" itemprop="datePublished">2016-04-12</time>
+  
+      - Buddha
+  
+</a>
+
+      
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Generating the Jam Coins
+    </h1>
+  
+
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+  <header class="article-header">
+    
+    
+      
+        <a href="https://github.com/jbuddha/competitions/blob/master/codejam/src/year2016/JamCoins.java"><i class="fa fa-github fa-5x" title="Source @Github"></i></a>
+      
+      
+    
+  </header>
+
+
+
+      
+        <p><img src="https://farm2.staticflickr.com/1638/25470220981_c6d315ac60_m.jpg" alt="The Problem"></p>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Here is a moderate problem of CodeJam’s qualification round of 2016. The Jam Coins. Here is the description of the problem. You need to generate jamcoins of either 16 digits for small dataset or 32 digits for large datasets. Jam Coins follow the given rules…</p>
+<ol>
+<li>A Jam Coin is only made up of 1’s &amp; 0’s of the required number of digits.</li>
+<li>It begins and ends with 1.</li>
+<li>If that interpreted from base 2 to base 10, it should not be a prime number in any of them.</li>
+</ol>
+<p>For Small dataset, you need to generate 50 jam coins of 16 digits and for large dataset, you need to generate 500 jam coins of 32 digits following above rules.<br><a id="more"></a><br>Output should be the list of Jam Coins where each is followed by a divisor of that number in each base.</p>
+<p>Let us say that we want to test if <code>11001101</code> is a jam coin or not.</p>
+<p>If we assume that the number is in base 2, it’s decimal equivalent is 2^7+2^6+2^3+2^2+1 = 205 =&gt; Not a prime number =&gt; Divisible by 5<br>If we assume that the number is in base 3, it’s decimal equivalent is 3^7+3^6+3^3+3^2+1 = 2953 =&gt; Prime Number =&gt; Hence not a jam coin</p>
+<p>Let us test <code>1010101</code></p>
+
+<div style="width: 50%;">
+
+<table>
+<thead>
+<tr>
+<th>Base</th>
+<th>Decimal Equivalent</th>
+<th>Divisior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>85</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>820</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4369</td>
+<td>17</td>
+</tr>
+<tr>
+<td>5</td>
+<td>16276</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>47989</td>
+<td>37</td>
+</tr>
+<tr>
+<td>7</td>
+<td>120100</td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>266305</td>
+<td>5</td>
+</tr>
+<tr>
+<td>9</td>
+<td>538084</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1010101</td>
+<td>73</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p>It is divisible by some or number in all bases from 2 to 10. Hence it is a Jam Coin. We need to generate such coins with given number of digits.</p>
+<p>Hence this can be included in output as below if the input is <code>7 10</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Case #1:</span><br><span class="line">1000001 5 2 17 2 13 2 5 2 101</span><br><span class="line">1001011 3 2 5 2 7 2 3 2 11</span><br><span class="line">1010101 5 2 17 2 37 2 5 2 73</span><br><span class="line">1011101 3 7 11 3 5 43 3 11 7</span><br><span class="line">1011111 5 2 3 2 37 2 5 2 3</span><br><span class="line">1100011 3 2 5 2 7 2 3 2 11</span><br><span class="line">1101001 3 2 5 2 7 2 3 2 11</span><br><span class="line">1101111 3 2 3 2 7 2 3 2 3</span><br><span class="line">1110111 7 2 3 2 43 2 17 2 3</span><br><span class="line">1111011 3 2 3 2 7 2 3 2 3</span><br></pre></td></tr></table></figure>
+<h2 id="My-solution"><a href="#My-solution" class="headerlink" title="My solution"></a>My solution</h2><p><img src="https://farm2.staticflickr.com/1561/25195430059_5a59d15b1a_n.jpg" alt="Let us take a closer look"><br>Let us begin with breaking the problem into manageable chunks before we try to solve it.</p>
+<figure class="highlight plain"><figcaption><span>Solution Pseudo Code</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Generate a number with required number of digits</span><br><span class="line">    - Convert it to decimal assuming it is base 2</span><br><span class="line">    - Test if it is a prime number</span><br><span class="line">    - If it is a prime number, go to step 1 else continue</span><br><span class="line">    - Convert it to decimal assuming it is base 3</span><br><span class="line">    - Test if it is a prime number</span><br><span class="line">    - If it is a prime number, go to step 1 else continue</span><br><span class="line">    - .... repeat till you reach base 10</span><br><span class="line">Find Divisors in each base</span><br><span class="line">Print the number</span><br><span class="line">Print all divisors</span><br></pre></td></tr></table></figure>
+<p>There are several complex problems inside the deceptively simple pseudocode</p>
+<ol>
+<li>Handle large numbers. 16 digits are way too big for a long datatype.</li>
+<li>Generate a number of required digits of 1’s &amp; 0’s</li>
+<li>Convert the number to decimal from given base</li>
+<li>Testing if it is prime number</li>
+<li>Finding a divisor</li>
+</ol>
+<p>Let us solve them one by one</p>
+<h5 id="1-5-Handling-insanely-large-numbers"><a href="#1-5-Handling-insanely-large-numbers" class="headerlink" title="[1/5]Handling insanely large numbers"></a>[1/5]Handling insanely large numbers</h5><p>It depends on the programming language of your choice. For this solution, I have chosen Java, which has java.math.BigInteger class that can store numbers and provides a very useful methods for prime number calculations. Example usage is as below.<br><figure class="highlight java"><figcaption><span>HelloWorldComponent.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BigInteger num = <span class="keyword">new</span> BigInteger(<span class="string">"101010110000011"</span>);</span><br><span class="line">num.nextProbablePrime();</span><br><span class="line">num.isProbablePrime(<span class="number">10</span>);</span><br><span class="line">num = <span class="keyword">new</span> BigInteger(<span class="string">"100001"</span>,<span class="number">3</span>);   <span class="comment">// converts 100001 to base 10 from base 3</span></span><br><span class="line">num.toString(<span class="number">2</span>);                    <span class="comment">// converts the num to base 2 from base 10</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="2-5-Generating-combination-of-1s-and-0s-that-begin-and-end-with-1"><a href="#2-5-Generating-combination-of-1s-and-0s-that-begin-and-end-with-1" class="headerlink" title="[2/5]Generating combination of 1s and 0s that begin and end with 1"></a>[2/5]Generating combination of 1s and 0s that begin and end with 1</h5><p>Following is the algorithm I followed.</p>
+<ol>
+<li>Generate a string of zeroes of size n-2, assuming n is the length required</li>
+<li>Append 1 before and after the string of zeroes</li>
+<li>To Generate another number, imagine the number if in binary, adding two(10 in binary format) will give next odd number. Any number ending with 1 in binary number is an odd number.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">100000000001</span><br><span class="line">           +</span><br><span class="line">          10</span><br><span class="line">------------</span><br><span class="line">100000000011</span><br><span class="line">           +</span><br><span class="line">          10</span><br><span class="line">------------</span><br><span class="line">100000000101</span><br></pre></td></tr></table></figure>
+<p>How do you add 10 in binary format? Just convert that base 2 number to base 10 and add 2 and convert it back to binary number, which leads us to the following question.</p>
+<h5 id="3-5-Convert-the-number-to-decimal-from-given-base"><a href="#3-5-Convert-the-number-to-decimal-from-given-base" class="headerlink" title="[3/5]Convert the number to decimal from given base"></a>[3/5]Convert the number to decimal from given base</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BigInteger incrementInBinaryByTwo(BigInteger num)</span><br><span class="line">&#123;</span><br><span class="line">	return new BigInteger(new BigInteger(num.toString(),2).add(ONE).add(ONE).toString(2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Converting from a decimal number to binary format is as simple as calling toString method with 2 as the parameter.</p>
+<h5 id="4-5-Testing-if-it-is-a-prime-number"><a href="#4-5-Testing-if-it-is-a-prime-number" class="headerlink" title="[4/5]Testing if it is a prime number"></a>[4/5]Testing if it is a prime number</h5><p>BigInteger class of Java provides a nice API to work with prime numbers</p>
+<p>BigInteger.isProbablePrime() will return false if it is definately not a prime and returns true, if the probablity for this number to be a prime number is less than 2^-100. Hence for our purpose of finding it is not a prime number this would serve the purpose.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">static boolean isComposite(BigInteger num) &#123;</span><br><span class="line">    for (int base = 2; base &lt; 11; base++) &#123;</span><br><span class="line">        if (new BigInteger(num.toString(), base).isProbablePrime(10)) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="5-5-Finding-a-divisor"><a href="#5-5-Finding-a-divisor" class="headerlink" title="[5/5]Finding a divisor"></a>[5/5]Finding a divisor</h5><p>BigInteger has nextProbablePrime method that returns a prime number after the given number. So, if we use it on a prime number, we can get the next prime number and so on. As we can now get all prime numbers one after the another, we can divide our number with each prime number and return the first divisor. However, going indefinately till all primes are verified is inefficient for this problem. There will be simpler jam coins to mine. So, we will test for first 10000 prime numbers. If it is not divisible by any of it, we ignore that number and continue with next number. Here is the code.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">static BigInteger findSmallestFactor(BigInteger n) &#123;</span><br><span class="line">    BigInteger half = sqrt(n);</span><br><span class="line">    BigInteger factor = new BigInteger(&quot;2&quot;);</span><br><span class="line">    int counter = 0;</span><br><span class="line">    while (factor.compareTo(half) &lt; 0 &amp;&amp; !n.mod(factor).equals(BigInteger.ZERO)) &#123;</span><br><span class="line">        factor = factor.nextProbablePrime();</span><br><span class="line">        counter++;</span><br><span class="line">        if (counter == 10000) &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (!n.mod(factor).equals(BigInteger.ZERO)) &#123;</span><br><span class="line">        throw new RuntimeException();</span><br><span class="line">    &#125;</span><br><span class="line">    return factor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://farm2.staticflickr.com/1593/25562936785_01a1831fc9_m.jpg" alt="Let us put all the pieces together"><br><figure class="highlight java"><figcaption><span>JamCoins.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> year2016;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.math.BigInteger.ONE;</span><br><span class="line"><span class="keyword">import</span> java.nio.charset.Charset;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Paths;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JamCoins</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> List&lt;BigInteger&gt; coins = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">processTest</span><span class="params">(String test)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> size = Integer.parseInt(test.split(<span class="string">" "</span>)[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">int</span> count = Integer.parseInt(test.split(<span class="string">" "</span>)[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">        List&lt;BigInteger&gt; jamCoins = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        String zeroes = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; size; i++) &#123;</span><br><span class="line">            zeroes += <span class="string">"0"</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BigInteger num = <span class="keyword">new</span> BigInteger(<span class="string">"1"</span> + zeroes + <span class="string">"1"</span>);</span><br><span class="line">        String entry = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (num.toString().length() == size &amp;&amp; jamCoins.size() &lt; count) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isComposite(num)) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    entry = num.toString();</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> base = <span class="number">2</span>; base &lt; <span class="number">11</span>; base++) &#123;</span><br><span class="line">                        entry += <span class="string">" "</span> + findSmallestFactor(<span class="keyword">new</span> BigInteger(num.toString(), base));</span><br><span class="line">                    &#125;</span><br><span class="line">                    addOutput(entry);</span><br><span class="line">                    jamCoins.add(num);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            num = incrementInBinaryByTwo(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> BigInteger <span class="title">findSmallestFactor</span><span class="params">(BigInteger n)</span> </span>&#123;</span><br><span class="line">        BigInteger half = sqrt(n);</span><br><span class="line">        BigInteger factor = <span class="keyword">new</span> BigInteger(<span class="string">"2"</span>);</span><br><span class="line">        <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (factor.compareTo(half) &lt; <span class="number">0</span> &amp;&amp; !n.mod(factor).equals(BigInteger.ZERO)) &#123;</span><br><span class="line">            factor = factor.nextProbablePrime();</span><br><span class="line">            counter++;</span><br><span class="line">            <span class="keyword">if</span> (counter == <span class="number">10000</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!n.mod(factor).equals(BigInteger.ZERO)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> factor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> BigInteger <span class="title">sqrt</span><span class="params">(BigInteger n)</span> </span>&#123;</span><br><span class="line">        BigInteger div = BigInteger.ZERO.setBit(n.bitLength() / <span class="number">2</span>);</span><br><span class="line">        BigInteger div2 = div;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            BigInteger y = div.add(n.divide(div)).shiftRight(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (y.equals(div) || y.equals(div2)) &#123;</span><br><span class="line">                <span class="keyword">return</span> y;</span><br><span class="line">            &#125;</span><br><span class="line">            div2 = div;</span><br><span class="line">            div = y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isComposite</span><span class="params">(BigInteger num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> base = <span class="number">2</span>; base &lt; <span class="number">11</span>; base++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">new</span> BigInteger(num.toString(), base).isProbablePrime(<span class="number">10</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> max = <span class="number">32</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> BigInteger <span class="title">incrementInBinaryByTwo</span><span class="params">(BigInteger num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> BigInteger(<span class="keyword">new</span> BigInteger(num.toString(), <span class="number">2</span>).add(ONE).add(ONE).toString(<span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> BigInteger <span class="title">decrementInBinary</span><span class="params">(BigInteger num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> BigInteger(<span class="keyword">new</span> BigInteger(num.toString(), <span class="number">2</span>).subtract(ONE).toString(<span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Fixed Code Begins *********</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String INPUT_FILE = <span class="string">"input.txt"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Path OUTPUT_PATH = Paths.get(<span class="string">"output.txt"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> List&lt;String&gt; TESTS = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> List&lt;String&gt; OUTPUT = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        OUTPUT.clear();</span><br><span class="line">        OUTPUT.add(<span class="string">"Case #1:"</span>);</span><br><span class="line">        processInputFile();</span><br><span class="line">        Files.write(OUTPUT_PATH, OUTPUT, Charset.defaultCharset());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addOutput</span><span class="params">(String answer)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> c = OUTPUT.size() + <span class="number">1</span>;</span><br><span class="line">        OUTPUT.add(answer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">processInputFile</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> (BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(INPUT_FILE))) &#123;</span><br><span class="line">            String line;</span><br><span class="line">            count = Integer.parseInt(br.readLine());</span><br><span class="line">            <span class="keyword">while</span> ((line = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">                processTest(line);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+
+        
+  <header class="article-header">
+    
+    
+      
+        <a href="https://github.com/jbuddha/competitions/blob/master/codejam/src/year2016/JamCoins.java"><i class="fa fa-github fa-5x" title="Source @Github"></i></a>
+      
+      
+    
+  </header>
+
+
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/04/solving-jam-coins/" data-id="cin0p6rg20003fizagsw3gxjg" class="article-share-link">Delen</a>
+        
+          <a href="http://controlspace.info/2016/04/solving-jam-coins/#disqus_thread" class="article-comment-link">Commentaren</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/codejam/">codejam</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/competition/">competition</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/problems/">problems</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/puzzle/">puzzle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solution/">solution</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Disable DynAdmin authentication of Oracle Commerce</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/atg/" style="font-size: 15px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 15px;">oraclecommerce</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 10px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 10px;">solution</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a class="widget-title" href="/archives">Archieven</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li class="recents">
+            <a href="/2016/04/solving-jam-coins/">Generating the Jam Coins</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/">Disable DynAdmin authentication of Oracle Commerce</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/03/patch-utility-for-perforce/">Open Source Patch Utility For Perforce</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/03/hello-world-for-oracle-commerce/">Hello World for Oracle Commerce (ATG)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Buddha Jyothiprasad<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'controlspace';
+  
+  var disqus_url = 'http://controlspace.info/2016/04/solving-jam-coins/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<link rel="stylesheet" href="/css/mystyles.css">
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
