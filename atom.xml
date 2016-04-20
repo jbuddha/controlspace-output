@@ -134,11 +134,11 @@
     </summary>
     
     
+      <category term="java" scheme="http://controlspace.info/tags/java/"/>
+    
       <category term="problems" scheme="http://controlspace.info/tags/problems/"/>
     
       <category term="codejam" scheme="http://controlspace.info/tags/codejam/"/>
-    
-      <category term="java" scheme="http://controlspace.info/tags/java/"/>
     
       <category term="puzzle" scheme="http://controlspace.info/tags/puzzle/"/>
     
@@ -214,13 +214,13 @@
     </summary>
     
     
-      <category term="java" scheme="http://controlspace.info/tags/java/"/>
-    
       <category term="javafx" scheme="http://controlspace.info/tags/javafx/"/>
     
       <category term="opensource" scheme="http://controlspace.info/tags/opensource/"/>
     
       <category term="perforce" scheme="http://controlspace.info/tags/perforce/"/>
+    
+      <category term="java" scheme="http://controlspace.info/tags/java/"/>
     
   </entry>
   
