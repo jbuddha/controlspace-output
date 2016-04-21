@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://controlspace.info/"/>
-  <updated>2016-04-14T19:43:44.000Z</updated>
+  <updated>2016-04-21T18:44:46.000Z</updated>
   <id>http://controlspace.info/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Restricting an ojInputText to accept only numbers</title>
+    <link href="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/"/>
+    <id>http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/</id>
+    <published>2016-04-21T18:30:00.000Z</published>
+    <updated>2016-04-21T18:44:46.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but that only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t directly. One way to do it is to bind a keyUp event and check everytime a character is pressed.&lt;/p&gt;
+&lt;p&gt;Here is a much cleaner approach. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke. To acheive this, I have created a helper observable which is a computed observable depending on the value of text box. Whenever a new key is pressed, the computation of helper observable takes place. Here, I used simple javascript regex method to cleanup. Once the cleanup is done, I’m updating the original input text if the value has changed, otherwise I’m leaving it alone. Please find the jsFiddle below.&lt;/p&gt;
+&lt;iframe scrolling=&quot;no&quot; width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/0yakz3q6/embedded/result,js,html/dark&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</content>
+    
+    <summary type="html">
+    
+      If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&#39;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if entered.
+    
+    </summary>
+    
+    
+      <category term="oraclejet" scheme="http://controlspace.info/tags/oraclejet/"/>
+    
+      <category term="javascript" scheme="http://controlspace.info/tags/javascript/"/>
+    
+      <category term="html" scheme="http://controlspace.info/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>Generating the Jam Coins</title>

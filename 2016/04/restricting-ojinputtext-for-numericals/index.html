@@ -5,17 +5,18 @@
   <!-- for bing's convenience -->
   <meta name="msvalidate.01" content="18487D0B4A4C57C561C46743ED26C1CA" />
   
-  <title>Tag: opensource | Ctrl+Space</title>
+  <title>Restricting an ojInputText to accept only numbers | Ctrl+Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ctrl+Space">
-<meta property="og:url" content="http://controlspace.info/tags/opensource/index.html">
+  <meta name="description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Restricting an ojInputText to accept only numbers">
+<meta property="og:url" content="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/index.html">
 <meta property="og:site_name" content="Ctrl+Space">
-<meta property="og:description">
+<meta property="og:description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
+<meta property="og:updated_time" content="2016-04-21T18:44:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ctrl+Space">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Restricting an ojInputText to accept only numbers">
+<meta name="twitter:description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
   
     <link rel="alternate" href="/atom.xml" title="Ctrl+Space" type="application/atom+xml">
   
@@ -85,43 +86,81 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
+        <section id="main"><article id="post-2016/04/restricting-ojinputtext-for-numericals" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/03/patch-utility-for-perforce/" class="archive-article-date" style="text-transform: none;">
-  <time datetime="2016-03-07T18:30:00.000Z" itemprop="datePublished">Mar 8</time>
+    <div class="article-meta">
+      <a href="/2016/04/restricting-ojinputtext-for-numericals/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-04-21T18:30:00.000Z" itemprop="datePublished">2016-04-22</time>
   
       - Buddha
   
 </a>
 
       
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/patch-utility-for-perforce/">Open Source Patch Utility For Perforce</a>
+    <h1 class="article-title" itemprop="name">
+      Restricting an ojInputText to accept only numbers
     </h1>
   
 
-    </header>
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+
+
+      
+        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but that only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t directly. One way to do it is to bind a keyUp event and check everytime a character is pressed.</p>
+<p>Here is a much cleaner approach. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke. To acheive this, I have created a helper observable which is a computed observable depending on the value of text box. Whenever a new key is pressed, the computation of helper observable takes place. Here, I used simple javascript regex method to cleanup. Once the cleanup is done, I’m updating the original input text if the value has changed, otherwise I’m leaving it alone. Please find the jsFiddle below.</p>
+<iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/0yakz3q6/embedded/result,js,html/dark" frameborder="0" allowfullscreen></iframe>
+
+        
+
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/" data-id="cinamb8e50000w7za74b9y2q0" class="article-share-link">Share</a>
+        
+          <a href="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/#disqus_thread" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oraclejet/">oraclejet</a></li></ul>
+
+      </footer>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/solving-jam-coins/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Generating the Jam Coins</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
 </section>
         
@@ -202,11 +241,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'controlspace';
   
+  var disqus_url = 'http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
