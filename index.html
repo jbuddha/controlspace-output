@@ -120,7 +120,7 @@ ga('send', 'pageview');
 
 
       
-        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but that only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t directly. Ofcousrse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.</p>
+        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default. Ofcourse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.</p>
 <p>Here is an alternative approach using ojInputText. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke.
         
           <p class="article-more-link">

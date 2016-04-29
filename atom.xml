@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://controlspace.info/"/>
-  <updated>2016-04-21T18:55:21.000Z</updated>
+  <updated>2016-04-29T06:12:41.000Z</updated>
   <id>http://controlspace.info/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/"/>
     <id>http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/</id>
     <published>2016-04-21T18:30:00.000Z</published>
-    <updated>2016-04-21T18:55:21.000Z</updated>
+    <updated>2016-04-29T06:12:41.000Z</updated>
     
-    <content type="html">&lt;p&gt;Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but that only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t directly. Ofcousrse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default. Ofcourse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.&lt;/p&gt;
 &lt;p&gt;Here is an alternative approach using ojInputText. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke. &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;To acheive the result, I have created a helper observable which is a computed observable depending on the value of text box. Whenever a new key is pressed, the computation of helper observable takes place. Here, I used simple javascript regex method to cleanup. Once the cleanup is done, I’m updating the original input text if the value has changed, otherwise I’m leaving it alone. Please find the jsFiddle below.&lt;/p&gt;
 &lt;iframe scrolling=&quot;no&quot; width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/0yakz3q6/embedded/result,js,html/dark&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 </content>
