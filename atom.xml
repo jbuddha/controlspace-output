@@ -56,9 +56,9 @@
     
       <category term="knockoutjs" scheme="http://controlspace.info/tags/knockoutjs/"/>
     
-      <category term="css" scheme="http://controlspace.info/tags/css/"/>
-    
       <category term="jquery" scheme="http://controlspace.info/tags/jquery/"/>
+    
+      <category term="css" scheme="http://controlspace.info/tags/css/"/>
     
   </entry>
   
@@ -301,9 +301,9 @@
     
       <category term="atg" scheme="http://controlspace.info/tags/atg/"/>
     
-      <category term="configuration" scheme="http://controlspace.info/tags/configuration/"/>
-    
       <category term="oraclecommerce" scheme="http://controlspace.info/tags/oraclecommerce/"/>
+    
+      <category term="configuration" scheme="http://controlspace.info/tags/configuration/"/>
     
       <category term="hack" scheme="http://controlspace.info/tags/hack/"/>
     
@@ -330,13 +330,13 @@
     </summary>
     
     
+      <category term="java" scheme="http://controlspace.info/tags/java/"/>
+    
       <category term="javafx" scheme="http://controlspace.info/tags/javafx/"/>
     
       <category term="opensource" scheme="http://controlspace.info/tags/opensource/"/>
     
       <category term="perforce" scheme="http://controlspace.info/tags/perforce/"/>
-    
-      <category term="java" scheme="http://controlspace.info/tags/java/"/>
     
   </entry>
   
@@ -379,9 +379,9 @@
     
       <category term="atg" scheme="http://controlspace.info/tags/atg/"/>
     
-      <category term="oraclecommerce" scheme="http://controlspace.info/tags/oraclecommerce/"/>
-    
       <category term="java" scheme="http://controlspace.info/tags/java/"/>
+    
+      <category term="oraclecommerce" scheme="http://controlspace.info/tags/oraclecommerce/"/>
     
   </entry>
   
