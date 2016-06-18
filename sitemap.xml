@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/</loc>
+    
+    <lastmod>2016-06-18T12:31:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/</loc>
     
-    <lastmod>2016-04-29T06:12:41.000Z</lastmod>
+    <lastmod>2016-06-18T12:21:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/</loc>
+    
+    <lastmod>2016-05-17T10:49:39.000Z</lastmod>
     
   </url>
   

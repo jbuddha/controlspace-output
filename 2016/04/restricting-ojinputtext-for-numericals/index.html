@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/index.html">
 <meta property="og:site_name" content="Ctrl+Space">
 <meta property="og:description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
-<meta property="og:updated_time" content="2016-04-29T06:12:41.000Z">
+<meta property="og:updated_time" content="2016-06-18T12:21:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Restricting an ojInputText to accept only numbers">
 <meta name="twitter:description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
@@ -119,9 +119,11 @@ ga('send', 'pageview');
 
 
       
-        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default. Ofcourse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.</p>
-<p>Here is an alternative approach using ojInputText. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke. <a id="more"></a>To acheive the result, I have created a helper observable which is a computed observable depending on the value of text box. Whenever a new key is pressed, the computation of helper observable takes place. Here, I used simple javascript regex method to cleanup. Once the cleanup is done, I’m updating the original input text if the value has changed, otherwise I’m leaving it alone. Please find the jsFiddle below.</p>
-<iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/0yakz3q6/embedded/result,js,html/dark" frameborder="0" allowfullscreen></iframe>
+        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default.</p>
+<p>Here is the result before we go and learn how to do it.<br></p><p data-height="350" data-theme-id="0" data-slug-hash="mErVGe" data-default-tab="result" data-user="jbuddha" data-embed-version="2"  class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/mErVGe/" target="_blank" rel="external">Allow only numbers in OjInputText</a> by Buddha (<a href="http://codepen.io/jbuddha" target="_blank" rel="external">@jbuddha</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script><p></p>
+<p>Ofcourse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.</p>
+<p>Here is an alternative approach using ojInputText. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke. <a id="more"></a>To acheive the result, I have created a helper observable which is a computed observable depending on the value of text box. Whenever a new key is pressed, the computation of helper observable takes place. Here, I used simple javascript regex method to cleanup. Once the cleanup is done, I’m updating the original input text if the value has changed, otherwise I’m leaving it alone. See the below Pen, if you want to see the code and the ojInputText in action.</p>
+<p data-height="350" data-theme-id="0" data-slug-hash="mErVGe" data-default-tab="html" data-user="jbuddha" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/mErVGe/" target="_blank" rel="external">Allow only numbers in OjInputText</a> by Buddha (<a href="http://codepen.io/jbuddha" target="_blank" rel="external">@jbuddha</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
         
 
@@ -143,6 +145,15 @@ ga('send', 'pageview');
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Breadth First Traversal In a Binary Tree Without Recursion
+        
+      </div>
+    </a>
   
   
     <a href="/2016/04/solving-jam-coins/" id="article-nav-older" class="article-nav-link-wrap">
@@ -170,7 +181,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/atg/" style="font-size: 15px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 15px;">oraclecommerce</a> <a href="/tags/oraclejet/" style="font-size: 10px;">oraclejet</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 10px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 10px;">solution</a>
+      <a href="/tags/algorithms/" style="font-size: 10px;">algorithms</a> <a href="/tags/atg/" style="font-size: 15px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/datastructures/" style="font-size: 10px;">datastructures</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/knockoutjs/" style="font-size: 10px;">knockoutjs</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 15px;">oraclecommerce</a> <a href="/tags/oraclejet/" style="font-size: 15px;">oraclejet</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 15px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 15px;">solution</a>
     </div>
   </div>
 
@@ -179,7 +190,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title"><a class="widget-title" href="/archives">Archives</a></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
   </div>
 
@@ -192,6 +203,14 @@ ga('send', 'pageview');
       <ul>
         
           <li class="recents">
+            <a href="/2016/06/collapsible-panel-in-oracle-jet/">Collapsible panel using OJet &amp; jQuery</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/">Breadth First Traversal In a Binary Tree Without Recursion</a>
+          </li>
+        
+          <li class="recents">
             <a href="/2016/04/restricting-ojinputtext-for-numericals/">Restricting an ojInputText to accept only numbers</a>
           </li>
         
@@ -201,14 +220,6 @@ ga('send', 'pageview');
         
           <li class="recents">
             <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/">Disable DynAdmin authentication of Oracle Commerce</a>
-          </li>
-        
-          <li class="recents">
-            <a href="/2016/03/patch-utility-for-perforce/">Open Source Patch Utility For Perforce</a>
-          </li>
-        
-          <li class="recents">
-            <a href="/2016/03/hello-world-for-oracle-commerce/">Hello World for Oracle Commerce (ATG)</a>
           </li>
         
       </ul>

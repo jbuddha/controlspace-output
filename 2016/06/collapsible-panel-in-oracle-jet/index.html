@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- for bing's convenience -->
+  <meta name="msvalidate.01" content="18487D0B4A4C57C561C46743ED26C1CA" />
+  
+  <title>Collapsible panel using OJet &amp; jQuery | Ctrl+Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="If you have ever wanted to develop a div/panel that can be minimized or maximized and close by clicking on respective icons, this article shows you how to do it.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Collapsible panel using OJet & jQuery">
+<meta property="og:url" content="http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/index.html">
+<meta property="og:site_name" content="Ctrl+Space">
+<meta property="og:description" content="If you have ever wanted to develop a div/panel that can be minimized or maximized and close by clicking on respective icons, this article shows you how to do it.">
+<meta property="og:updated_time" content="2016-06-18T12:31:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Collapsible panel using OJet & jQuery">
+<meta name="twitter:description" content="If you have ever wanted to develop a div/panel that can be minimized or maximized and close by clicking on respective icons, this article shows you how to do it.">
+  
+    <link rel="alternate" href="/atom.xml" title="Ctrl+Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75818367-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ctrl+Space</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The Intellisense Every Programmer Needs</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://controlspace.info"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2016/06/collapsible-panel-in-oracle-jet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/collapsible-panel-in-oracle-jet/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-06-10T18:30:00.000Z" itemprop="datePublished">2016-06-11</time>
+  
+      - Buddha
+  
+</a>
+
+      
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Collapsible panel using OJet &amp; jQuery
+    </h1>
+  
+
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+
+
+      
+        <p>Before we begin, let me show you the final output we are going to get. Click Run Pen button if you want to see the collapsible panel in action</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="PzGZMW" data-default-tab="result" data-user="jbuddha" data-embed-version="2"  class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/PzGZMW/" target="_blank" rel="external">Collapsible and Expandable Panels</a> by Buddha (<a href="http://codepen.io/jbuddha" target="_blank" rel="external">@jbuddha</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>The panel can be minimized or maximized by clicking on the arrow button. It can also be removed completely by clicking close button. How do we achieve this? I have used KnockoutJS, OracleJET and jQuery to achieve the result. RequireJS is also used but only to get the required libraries from CDN. However, OracleJet is predomantly is used for styling alone. Rest of the bindings can be achieved by regular KnockoutJS and jQuery. Read forward to learn how to get the above result.<br> <a id="more"></a><br>If you are not familiar with RequireJS and OracleJet, some of the things are bit tricky at first, hence basic knowledge on this is expected.</p>
+<h2 id="The-View"><a href="#The-View" class="headerlink" title="The View"></a>The View</h2><p>View mainly consists of Two elements. One is title bar and another is collapsible div. We can use font-awesome to get the icons.</p>
+<h3 id="Title-bar"><a href="#Title-bar" class="headerlink" title="Title bar"></a>Title bar</h3><p>Title bar itself presents several problems. How can we push the icons to the right. We can achieve this very easily by seperating the title bar into 3 parts. The Title text, The icons, and the gap. We can very easily fix the icons and title text at their respective ends by making the gap a flex item that grows where as the other two remain fixed.</p>
+<p>Oracle Jet provides Flex Bar for this kind of purposes. We can make a div a flex bar by applying <code>.oj-flex-bar</code> class. For the children, we have to use <code>.oj-flex-bar-start</code> and <code>.oj-flex-bar-end</code> classes for title text and icons div. However, we have to keep an empty div and give it <code>.oj-flex-item</code> class so that it grows or shrinks automatically when ever the title bar changes its size. This will ensure that icons stay at the end of title bar. Lines 3, 4 &amp; 5 demonstrate the usage of these classes.</p>
+<p>For icons, <code>fa-chevron-circle-down</code> and <code>fa-chevron-circle-up</code> from font-awesome library are used depending on state of the panel. No need to have two different icons as only one of them is used all the time. So, these classes are conditionally added to html based on collapsed state. Used regualar knockout css binding. Observe lines 4 and 5 in the following snippet. <code>collapsed</code> is an observable. When collapsed is true, down icon class is used for the <code>i</code> tag and when it is false, the down class will be removed. Same thing happens for the up icon but in reverse. Lines 7 &amp; 8 demonstrate the conditional css binding. All other classes <code>fa oj-margin-start oj-padding-horizontal hoverable</code> are constant, hence directly set to <code>class</code> attribute of icon tag. <code>fa-times</code> works well for close button. Both these icons’ click events are bound to functions. Close icon is bound to close funtion and min-max button button’s click handler is collapse. We shall discuss these further in the view model section. The entire title bar is placed in a div whose id is header.</p>
+<figure class="highlight html"><figcaption><span>Min-Max Icon binding</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"panel"</span> <span class="attr">class</span>=<span class="string">"oj-margin"</span> <span class="attr">style</span>=<span class="string">"border: 1px solid"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"header"</span> <span class="attr">class</span>=<span class="string">"oj-flex oj-panel oj-flex-bar"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"oj-flex-start"</span> &gt;</span>This is the title<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"oj-flex-item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"oj-flex-end oj-panel-alt1 oj-margin-start"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">id</span>=<span class="string">"min-max-icon"</span> <span class="attr">class</span>=<span class="string">"fa oj-margin-start oj-padding-horizontal hoverable"</span></span><br><span class="line">          <span class="attr">data-bind</span>=<span class="string">"click: collapse,</span><br><span class="line">                     css: &#123;'fa-chevron-circle-down': collapsed(),</span><br><span class="line">                           'fa-chevron-circle-up':  !collapsed()&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-close oj-padding-horizontal hoverable"</span> <span class="attr">data-bind</span>=<span class="string">"click: close"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"collapsableContent"</span> <span class="attr">style</span>=<span class="string">"width: 300px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>The collapsable content is placed in a seperate div <code>#collapsableContent</code>. I have used knockout punches to bind <code>val</code> observable to the content of h1 tag inside collapsible content. How this is collapsed is discussed in the next section.</p>
+<h2 id="The-View-Model"><a href="#The-View-Model" class="headerlink" title="The View Model"></a>The View Model</h2><p>View model is pretty simple. It has two observables, one is <code>val</code> whose content are bound to h1. This observable is not mandatory. The other observable is <code>collapsed</code>. This is quite important. Especially for switching minimise and maximise icons. This is either true of false. Upon calling <code>collapse</code> event handler, the value will be flipped.</p>
+<figure class="highlight js"><figcaption><span>View Model</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">'ojs/ojcore'</span>, <span class="string">'knockout'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">oj, ko</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">panelWithIconsContentViewModel</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    self.val = <span class="string">"I'm going to be collapsed, I have some text..."</span>;</span><br><span class="line">    self.collapsed = ko.observable(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    self.collapse = <span class="function"><span class="keyword">function</span> <span class="title">collapse</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">      $(<span class="string">"#collapsableContent"</span>).slideToggle();</span><br><span class="line">      self.collapsed(!self.collapsed());</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    self.close = <span class="function"><span class="keyword">function</span> <span class="title">collapse</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">      $(<span class="string">"#panel"</span>).remove();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> panelWithIconsContentViewModel;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>self.collapse</code> is a function that gets triggered upon clicking min or max function. jQuery’s slideToggle function is used to slide the <code>collapsableContent</code> in and out of view giving an impression of minimize.</p>
+<p>The other function is <code>self.close</code> which is bound to click handler of close icon. This simply removes the entire panel by using jQuery’s remove method. You may want to do something more by showing a dialog asking whether user really wants to close or not, I chose to simply close it.</p>
+<p>I didn’t include other configuration information that is required for oraclejet and other libraries in the above code snippet. Please refer the codepen’s javascript resources given for configuration related code. However, if you are creating a seperate viewModel for the panel alone, no other code is necessary.</p>
+<p data-height="350" data-theme-id="0" data-slug-hash="PzGZMW" data-default-tab="html" data-user="jbuddha" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/PzGZMW/" target="_blank" rel="external">Collapsible and Expandable Panels</a> by Buddha (<a href="http://codepen.io/jbuddha" target="_blank" rel="external">@jbuddha</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<hr>
+<p>If you are interested in non technical reading: <a href="https://unfurledpages.wordpress.com/2016/06/01/an-escape-or-a-possibilty/" target="_blank" rel="external">An escape or a possibility?</a></p>
+
+        
+
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/" data-id="cipktcu4y00004ezaniaormdi" class="article-share-link">Share</a>
+        
+          <a href="http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/#disqus_thread" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/">knockoutjs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oraclejet/">oraclejet</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Breadth First Traversal In a Binary Tree Without Recursion</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/algorithms/" style="font-size: 10px;">algorithms</a> <a href="/tags/atg/" style="font-size: 15px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/datastructures/" style="font-size: 10px;">datastructures</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/knockoutjs/" style="font-size: 10px;">knockoutjs</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 15px;">oraclecommerce</a> <a href="/tags/oraclejet/" style="font-size: 15px;">oraclejet</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 15px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 15px;">solution</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a class="widget-title" href="/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li class="recents">
+            <a href="/2016/06/collapsible-panel-in-oracle-jet/">Collapsible panel using OJet &amp; jQuery</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/">Breadth First Traversal In a Binary Tree Without Recursion</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/04/restricting-ojinputtext-for-numericals/">Restricting an ojInputText to accept only numbers</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/04/solving-jam-coins/">Generating the Jam Coins</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/">Disable DynAdmin authentication of Oracle Commerce</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Buddha Jyothiprasad<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'controlspace';
+  
+  var disqus_url = 'http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<link rel="stylesheet" href="/css/mystyles.css">
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

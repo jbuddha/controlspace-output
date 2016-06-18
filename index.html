@@ -87,6 +87,134 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-2016/06/collapsible-panel-in-oracle-jet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/collapsible-panel-in-oracle-jet/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-06-10T18:30:00.000Z" itemprop="datePublished">2016-06-11</time>
+  
+      - Buddha
+  
+</a>
+
+      
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/collapsible-panel-in-oracle-jet/">Collapsible panel using OJet &amp; jQuery</a>
+    </h1>
+  
+
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+
+
+      
+        <p>Before we begin, let me show you the final output we are going to get. Click Run Pen button if you want to see the collapsible panel in action</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="PzGZMW" data-default-tab="result" data-user="jbuddha" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/PzGZMW/">Collapsible and Expandable Panels</a> by Buddha (<a href="http://codepen.io/jbuddha">@jbuddha</a>) on <a href="http://codepen.io">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>The panel can be minimized or maximized by clicking on the arrow button. It can also be removed completely by clicking close button. How do we achieve this? I have used KnockoutJS, OracleJET and jQuery to achieve the result. RequireJS is also used but only to get the required libraries from CDN. However, OracleJet is predomantly is used for styling alone. Rest of the bindings can be achieved by regular KnockoutJS and jQuery. Read forward to learn how to get the above result.<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/collapsible-panel-in-oracle-jet/#more">Read More</a>
+          </p>
+        
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/" data-id="cipktcu4y00004ezaniaormdi" class="article-share-link">Share</a>
+        
+          <a href="http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/#disqus_thread" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/knockoutjs/">knockoutjs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oraclejet/">oraclejet</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2016/05/non-recursive-breadth-first-traversal-binary-tree" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-05-16T18:30:00.000Z" itemprop="datePublished">2016-05-17</time>
+  
+      - Buddha
+  
+</a>
+
+      
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/">Breadth First Traversal In a Binary Tree Without Recursion</a>
+    </h1>
+  
+
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+
+
+      
+        <p><img src="https://farm8.staticflickr.com/7466/26975009532_9fac6b112d_o.png" alt="Binary Tree Example"></p>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Imagine you have a binary tree where as shown above. You may be aware of InOrder traversal where you follow a scheme of visiting left subtree and then visit root node and finally visit right subtree. With small variations in order same is done in pre-order as well as post-order traversal. How do you do a breadth first traversal? It is slightly more tricky. Doing it non-recursively is even more difficult at first sight. Let me first explain what is breadthfirst traversal.</p>
+<p>Different traversals produce different output as shown below</p>
+<figure class="highlight java"><figcaption><span>In-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">12</span> <span class="number">23</span> <span class="number">46</span> <span class="number">89</span> <span class="number">445</span> <span class="number">461</span> <span class="number">678</span> <span class="number">789</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>Post-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">12</span> <span class="number">89</span> <span class="number">46</span> <span class="number">23</span> <span class="number">461</span> <span class="number">789</span> <span class="number">678</span> <span class="number">445</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>Pre-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">445</span> <span class="number">23</span> <span class="number">12</span> <span class="number">1</span> <span class="number">46</span> <span class="number">89</span> <span class="number">678</span> <span class="number">461</span> <span class="number">789</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>Level-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">445</span> <span class="number">23</span> <span class="number">678</span> <span class="number">12</span> <span class="number">46</span> <span class="number">461</span> <span class="number">789</span> <span class="number">1</span> <span class="number">89</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/#more">Read More</a>
+          </p>
+        
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/" data-id="ciobasalx0000jiza1ndi1v3i" class="article-share-link">Share</a>
+        
+          <a href="http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/#disqus_thread" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datastructures/">datastructures</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/problems/">problems</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solution/">solution</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2016/04/restricting-ojinputtext-for-numericals" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -120,7 +248,9 @@ ga('send', 'pageview');
 
 
       
-        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default. Ofcourse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.</p>
+        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default.</p>
+<p>Here is the result before we go and learn how to do it.<br><p data-height="350" data-theme-id="0" data-slug-hash="mErVGe" data-default-tab="result" data-user="jbuddha" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/mErVGe/">Allow only numbers in OjInputText</a> by Buddha (<a href="http://codepen.io/jbuddha">@jbuddha</a>) on <a href="http://codepen.io">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+<p>Ofcourse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.</p>
 <p>Here is an alternative approach using ojInputText. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke.
         
           <p class="article-more-link">
@@ -286,141 +416,11 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-2016/03/patch-utility-for-perforce" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/patch-utility-for-perforce/" class="article-date" style="text-transform: none;">
-  <time datetime="2016-03-07T18:30:00.000Z" itemprop="datePublished">2016-03-08</time>
-  
-      - Buddha
-  
-</a>
-
-      
-    </div>
-    
-    <div class="article-inner">
-      
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/patch-utility-for-perforce/">Open Source Patch Utility For Perforce</a>
-    </h1>
-  
-
-        </header>
-      
-
-    <div class="article-entry" itemprop="articleBody">
-
-      
-  <header class="article-header">
-    
-      <a href="https://github.com/jbuddha/perforce-patcher/blob/master/dist/perforce-patcher.jar?raw=true" style="padding: 2em; "><i class="fa fa-cloud-download fa-5x" title="Download"></i></a>
-    
-    
-      
-        <a href="https://github.com/jbuddha/perforce-patcher"><i class="fa fa-github fa-5x" title="Source @Github"></i></a>
-      
-      
-    
-  </header>
 
 
-
-      
-        <p>Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.<br><img src="https://farm2.staticflickr.com/1441/25563016955_8a691e760b_n.jpg" alt="Where is my patch?"><br>I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. <code>p4 diff</code> helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard. To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.<br>
-        
-          <p class="article-more-link">
-            <a href="/2016/03/patch-utility-for-perforce/#more">Read More</a>
-          </p>
-        
-      
-
-    </div>
-    
-      <footer class="article-footer">
-        <a data-url="http://controlspace.info/2016/03/patch-utility-for-perforce/" data-id="cin92key80003d5za07pyazbe" class="article-share-link">Share</a>
-        
-          <a href="http://controlspace.info/2016/03/patch-utility-for-perforce/#disqus_thread" class="article-comment-link">Comments</a>
-        
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javafx/">javafx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/opensource/">opensource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/perforce/">perforce</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2016/03/hello-world-for-oracle-commerce" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/hello-world-for-oracle-commerce/" class="article-date" style="text-transform: none;">
-  <time datetime="2016-03-05T18:30:00.000Z" itemprop="datePublished">2016-03-06</time>
-  
-      - Buddha
-  
-</a>
-
-      
-    </div>
-    
-    <div class="article-inner">
-      
-      
-        <header class="article-header">
-          
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/hello-world-for-oracle-commerce/">Hello World for Oracle Commerce (ATG)</a>
-    </h1>
-  
-
-        </header>
-      
-
-    <div class="article-entry" itemprop="articleBody">
-
-      
-
-
-      
-        <p>There are so many concepts in Oracle Commerce (previously known as ATG), that makes coming up with Hello World program little difficult. Do you mean to create one JSP page and deploy it like commerce reference store? Do you want to create a component just to see in Dyn/Admin? Do you want to create a hello world repository? Depending on what you want to do, the approach to take will be different.<br><img src="https://farm2.staticflickr.com/1633/25195316629_65c8162a37_n.jpg" alt="Too many options to begin with"><br>To work with Oracle Commerce, you don’t have to know about persisting data in database. If you approach Oracle Commerce programming with J2EE &amp; MVC experience, you may find it little difficult to cope with it unless you start with a fresh mind, because things are very different in this platform.</p>
-<p>Today, I will demonstrate how to create a simple component so that it can be viewed in Dyn/Admin. Let us assume that you are trying to create it in your own module instead of existing module like DAS or DAF. Follow the the steps shown below.</p>
-<h2 id="Step-1-Create-an-Eclipse-project"><a href="#Step-1-Create-an-Eclipse-project" class="headerlink" title="Step 1: Create an Eclipse project"></a>Step 1: Create an Eclipse project</h2><p>Create an Eclipse project and make sure you add all the necessary class files to the build path. Add classes.jar or DAS at the least.<br>
-        
-          <p class="article-more-link">
-            <a href="/2016/03/hello-world-for-oracle-commerce/#more">Read More</a>
-          </p>
-        
-      
-
-    </div>
-    
-      <footer class="article-footer">
-        <a data-url="http://controlspace.info/2016/03/hello-world-for-oracle-commerce/" data-id="cin92keyy0005d5zajuwgx5aj" class="article-share-link">Share</a>
-        
-          <a href="http://controlspace.info/2016/03/hello-world-for-oracle-commerce/#disqus_thread" class="article-comment-link">Comments</a>
-        
-        
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atg/">atg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oraclecommerce/">oraclecommerce</a></li></ul>
-
-      </footer>
-    
-  </div>
-  
-</article>
-
-
-
-  
-
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -429,7 +429,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/atg/" style="font-size: 15px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 15px;">oraclecommerce</a> <a href="/tags/oraclejet/" style="font-size: 10px;">oraclejet</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 10px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 10px;">solution</a>
+      <a href="/tags/algorithms/" style="font-size: 10px;">algorithms</a> <a href="/tags/atg/" style="font-size: 15px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/datastructures/" style="font-size: 10px;">datastructures</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/knockoutjs/" style="font-size: 10px;">knockoutjs</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 15px;">oraclecommerce</a> <a href="/tags/oraclejet/" style="font-size: 15px;">oraclejet</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 15px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 15px;">solution</a>
     </div>
   </div>
 
@@ -438,7 +438,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title"><a class="widget-title" href="/archives">Archives</a></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
   </div>
 
@@ -451,6 +451,14 @@ ga('send', 'pageview');
       <ul>
         
           <li class="recents">
+            <a href="/2016/06/collapsible-panel-in-oracle-jet/">Collapsible panel using OJet &amp; jQuery</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/">Breadth First Traversal In a Binary Tree Without Recursion</a>
+          </li>
+        
+          <li class="recents">
             <a href="/2016/04/restricting-ojinputtext-for-numericals/">Restricting an ojInputText to accept only numbers</a>
           </li>
         
@@ -460,14 +468,6 @@ ga('send', 'pageview');
         
           <li class="recents">
             <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/">Disable DynAdmin authentication of Oracle Commerce</a>
-          </li>
-        
-          <li class="recents">
-            <a href="/2016/03/patch-utility-for-perforce/">Open Source Patch Utility For Perforce</a>
-          </li>
-        
-          <li class="recents">
-            <a href="/2016/03/hello-world-for-oracle-commerce/">Hello World for Oracle Commerce (ATG)</a>
           </li>
         
       </ul>

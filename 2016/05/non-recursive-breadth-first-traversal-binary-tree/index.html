@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- for bing's convenience -->
+  <meta name="msvalidate.01" content="18487D0B4A4C57C561C46743ED26C1CA" />
+  
+  <title>Breadth First Traversal In a Binary Tree Without Recursion | Ctrl+Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Breadth first Traversal in a binary tree is a famous problem related to binary trees tree">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Breadth First Traversal In a Binary Tree Without Recursion">
+<meta property="og:url" content="http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/index.html">
+<meta property="og:site_name" content="Ctrl+Space">
+<meta property="og:description" content="Breadth first Traversal in a binary tree is a famous problem related to binary trees tree">
+<meta property="og:image" content="https://farm8.staticflickr.com/7466/26975009532_9fac6b112d_o.png">
+<meta property="og:updated_time" content="2016-05-17T10:49:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Breadth First Traversal In a Binary Tree Without Recursion">
+<meta name="twitter:description" content="Breadth first Traversal in a binary tree is a famous problem related to binary trees tree">
+<meta name="twitter:image" content="https://farm8.staticflickr.com/7466/26975009532_9fac6b112d_o.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Ctrl+Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75818367-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ctrl+Space</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The Intellisense Every Programmer Needs</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://controlspace.info"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2016/05/non-recursive-breadth-first-traversal-binary-tree" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-05-16T18:30:00.000Z" itemprop="datePublished">2016-05-17</time>
+  
+      - Buddha
+  
+</a>
+
+      
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Breadth First Traversal In a Binary Tree Without Recursion
+    </h1>
+  
+
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+
+
+      
+        <p><img src="https://farm8.staticflickr.com/7466/26975009532_9fac6b112d_o.png" alt="Binary Tree Example"></p>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Imagine you have a binary tree where as shown above. You may be aware of InOrder traversal where you follow a scheme of visiting left subtree and then visit root node and finally visit right subtree. With small variations in order same is done in pre-order as well as post-order traversal. How do you do a breadth first traversal? It is slightly more tricky. Doing it non-recursively is even more difficult at first sight. Let me first explain what is breadthfirst traversal.</p>
+<p>Different traversals produce different output as shown below</p>
+<figure class="highlight java"><figcaption><span>In-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">12</span> <span class="number">23</span> <span class="number">46</span> <span class="number">89</span> <span class="number">445</span> <span class="number">461</span> <span class="number">678</span> <span class="number">789</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>Post-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">12</span> <span class="number">89</span> <span class="number">46</span> <span class="number">23</span> <span class="number">461</span> <span class="number">789</span> <span class="number">678</span> <span class="number">445</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>Pre-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">445</span> <span class="number">23</span> <span class="number">12</span> <span class="number">1</span> <span class="number">46</span> <span class="number">89</span> <span class="number">678</span> <span class="number">461</span> <span class="number">789</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>Level-Order Traversal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">445</span> <span class="number">23</span> <span class="number">678</span> <span class="number">12</span> <span class="number">46</span> <span class="number">461</span> <span class="number">789</span> <span class="number">1</span> <span class="number">89</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Trick to solve any binary tree problem without Recursion is to use an auxiliary datastructure like Queue or Stack. For this problem, we shall use Queue as shown below code snippet.</p>
+<p>Logic is actually pretty simple, at every level after the root node, add left and right elements to the queue and repeat the process for child levels. As Queue, will give us the elements in FIFO order, when we pop the elements, we will be getting them in the order they are added, which is breadth wise.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelOrderTraversal</span><span class="params">(BinaryTree&lt;Integer&gt; tree)</span> </span>&#123;</span><br><span class="line">  Queue&lt;BinaryTreeNode&lt;Integer&gt;&gt; q = <span class="keyword">new</span> LinkedBlockingQueue&lt;&gt;();</span><br><span class="line">  q.add((tree.getRootNode()));</span><br><span class="line">  <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">    BinaryTreeNode&lt;Integer&gt; temp = q.poll();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(temp == <span class="keyword">null</span>)</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    System.out.println(temp.getValue());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(temp.left != <span class="keyword">null</span>)</span><br><span class="line">      q.add(temp.left);</span><br><span class="line">    <span class="keyword">if</span>(temp.right != <span class="keyword">null</span>)</span><br><span class="line">      q.add(temp.right);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>BinaryTree Diagrams are generated using <a href="https://www.cs.usfca.edu/~galles/visualization/BST.html" target="_blank" rel="external">Data Structure Visualizations</a></p>
+
+        
+
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/" data-id="ciobasalx0000jiza1ndi1v3i" class="article-share-link">Share</a>
+        
+          <a href="http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/#disqus_thread" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datastructures/">datastructures</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/problems/">problems</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solution/">solution</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/collapsible-panel-in-oracle-jet/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Collapsible panel using OJet &amp; jQuery
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/restricting-ojinputtext-for-numericals/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Restricting an ojInputText to accept only numbers</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/algorithms/" style="font-size: 10px;">algorithms</a> <a href="/tags/atg/" style="font-size: 15px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/datastructures/" style="font-size: 10px;">datastructures</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/html/" style="font-size: 15px;">html</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/knockoutjs/" style="font-size: 10px;">knockoutjs</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 15px;">oraclecommerce</a> <a href="/tags/oraclejet/" style="font-size: 15px;">oraclejet</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 15px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 15px;">solution</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a class="widget-title" href="/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li class="recents">
+            <a href="/2016/06/collapsible-panel-in-oracle-jet/">Collapsible panel using OJet &amp; jQuery</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/">Breadth First Traversal In a Binary Tree Without Recursion</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/04/restricting-ojinputtext-for-numericals/">Restricting an ojInputText to accept only numbers</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/04/solving-jam-coins/">Generating the Jam Coins</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/">Disable DynAdmin authentication of Oracle Commerce</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Buddha Jyothiprasad<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'controlspace';
+  
+  var disqus_url = 'http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<link rel="stylesheet" href="/css/mystyles.css">
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
