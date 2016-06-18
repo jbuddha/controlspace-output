@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://controlspace.info/"/>
-  <updated>2016-06-18T12:31:08.000Z</updated>
+  <updated>2016-06-18T13:49:18.242Z</updated>
   <id>http://controlspace.info/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/"/>
     <id>http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/</id>
     <published>2016-06-10T18:30:00.000Z</published>
-    <updated>2016-06-18T12:31:08.000Z</updated>
+    <updated>2016-06-18T13:49:18.242Z</updated>
     
     <content type="html">&lt;p&gt;Before we begin, let me show you the final output we are going to get. Click Run Pen button if you want to see the collapsible panel in action&lt;/p&gt;
 &lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;PzGZMW&quot; data-default-tab=&quot;result&quot; data-user=&quot;jbuddha&quot; data-embed-version=&quot;2&quot; data-preview=&quot;true&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/jbuddha/pen/PzGZMW/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Collapsible and Expandable Panels&lt;/a&gt; by Buddha (&lt;a href=&quot;http://codepen.io/jbuddha&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@jbuddha&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
@@ -67,7 +67,7 @@
     <link href="http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/"/>
     <id>http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/</id>
     <published>2016-05-16T18:30:00.000Z</published>
-    <updated>2016-05-17T10:49:39.000Z</updated>
+    <updated>2016-06-18T13:49:18.242Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7466/26975009532_9fac6b112d_o.png&quot; alt=&quot;Binary Tree Example&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;The-Problem&quot;&gt;&lt;a href=&quot;#The-Problem&quot; class=&quot;headerlink&quot; title=&quot;The Problem&quot;&gt;&lt;/a&gt;The Problem&lt;/h2&gt;&lt;p&gt;Imagine you have a binary tree where as shown above. You may be aware of InOrder traversal where you follow a scheme of visiting left subtree and then visit root node and finally visit right subtree. With small variations in order same is done in pre-order as well as post-order traversal. How do you do a breadth first traversal? It is slightly more tricky. Doing it non-recursively is even more difficult at first sight. Let me first explain what is breadthfirst traversal.&lt;/p&gt;
@@ -107,7 +107,7 @@
     <link href="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/"/>
     <id>http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/</id>
     <published>2016-04-21T18:30:00.000Z</published>
-    <updated>2016-06-18T12:21:22.000Z</updated>
+    <updated>2016-06-18T13:49:18.242Z</updated>
     
     <content type="html">&lt;p&gt;Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default.&lt;/p&gt;
 &lt;p&gt;Here is the result before we go and learn how to do it.&lt;br&gt;&lt;/p&gt;&lt;p data-height=&quot;350&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;mErVGe&quot; data-default-tab=&quot;result&quot; data-user=&quot;jbuddha&quot; data-embed-version=&quot;2&quot; data-preview=&quot;true&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/jbuddha/pen/mErVGe/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Allow only numbers in OjInputText&lt;/a&gt; by Buddha (&lt;a href=&quot;http://codepen.io/jbuddha&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@jbuddha&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;&lt;p&gt;&lt;/p&gt;
@@ -136,7 +136,7 @@
     <link href="http://controlspace.info/2016/04/solving-jam-coins/"/>
     <id>http://controlspace.info/2016/04/solving-jam-coins/</id>
     <published>2016-04-11T18:30:00.000Z</published>
-    <updated>2016-04-14T19:43:44.000Z</updated>
+    <updated>2016-04-29T06:17:08.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1638/25470220981_c6d315ac60_m.jpg&quot; alt=&quot;The Problem&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;The-Problem&quot;&gt;&lt;a href=&quot;#The-Problem&quot; class=&quot;headerlink&quot; title=&quot;The Problem&quot;&gt;&lt;/a&gt;The Problem&lt;/h2&gt;&lt;p&gt;Here is a moderate problem of CodeJam’s qualification round of 2016. The Jam Coins. Here is the description of the problem. You need to generate jamcoins of either 16 digits for small dataset or 32 digits for large datasets. Jam Coins follow the given rules…&lt;/p&gt;
@@ -269,7 +269,7 @@
     <link href="http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/"/>
     <id>http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/</id>
     <published>2016-03-31T18:30:00.000Z</published>
-    <updated>2016-04-02T11:06:39.000Z</updated>
+    <updated>2016-04-29T06:17:08.000Z</updated>
     
     <content type="html">&lt;p&gt;We use Dyn/Admin for many of the development related tasks of Oracle Commerce(ATG). However, the log-in ticket expires too frequently forcing us to enter credentials repeatedly. Some times we will also have to give both application server(weblogic/jboss) credentials and dynamo administration credentials. As we are not in a production critical environment where multiple people may access our DynAdmin and create issues, it is not necessary to have this security check every time we try to open DynAdmin of our development environment. I have found following solutions to be free of this issue. This can come in handy when we are doing active development and have to frequently access dynamo administration.&lt;/p&gt;
 &lt;h2 id=&quot;Solution-1-Enable-lazyAthentication&quot;&gt;&lt;a href=&quot;#Solution-1-Enable-lazyAthentication&quot; class=&quot;headerlink&quot; title=&quot;Solution 1 - Enable lazyAthentication&quot;&gt;&lt;/a&gt;Solution 1 - Enable lazyAthentication&lt;/h2&gt;&lt;p&gt;This approach works by enabling Lazy Athentication which means login will only be asked once per session. This means, as long as the session is not expired, dyn/admin will not ask for credentials again. &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;I have observed that this means a very long time. Sometimes even the the authentication credentials are not asked after restarting the server. Follow the below steps to enable lazyAthentication.&lt;/p&gt;
@@ -314,7 +314,7 @@
     <link href="http://controlspace.info/2016/03/patch-utility-for-perforce/"/>
     <id>http://controlspace.info/2016/03/patch-utility-for-perforce/</id>
     <published>2016-03-07T18:30:00.000Z</published>
-    <updated>2016-04-02T11:06:39.000Z</updated>
+    <updated>2016-04-29T06:17:08.000Z</updated>
     
     <content type="html">&lt;p&gt;Perforce is a proprietary version controlling system. It has been around for more than 20 years. However, one glaring limitation always bugs the users. The inability to generate proper diff files.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1441/25563016955_8a691e760b_n.jpg&quot; alt=&quot;Where is my patch?&quot;&gt;&lt;br&gt;I can anticipate what is going on in your mind, we can generate a diff file by using the command line interface. &lt;code&gt;p4 diff&lt;/code&gt; helps us generate a diff file. However if you ever had a misfortune of trying to generate patch files on regular basis. You would understand the pain. It works fine as long as you just modify existing files. However, if you have new files added to the workspace to be checked into to the depot, you quickly run out of luck. One more problem is that you can’t control the files included in the diff file based on change list. It gives you diff file for all the files that are modified. Of course, you can give individual file names, but you have to repeat it either one by one or by using common wildcard. To overcome this, I have come up with a simple JavaFX utility.  Using this utility is as simple as it can get.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;First step is to download the jar file. Click on the download button at the beginning or ending of the article. Just double click the jar file to run it.&lt;br&gt;&lt;div class=&quot;admonition warning&quot;&gt;&lt;p class=&quot;admonition-title&quot;&gt;Watchout&lt;/p&gt;&lt;p&gt;You Need JRE 8 to run this without any additional configuration. If you are using JRE 7, please keep jfxrt.jar in class path or simply copy it to your jre/lib/ext folder. jfxrt.jar is available inside your {jre or jdk}/lib folder.&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;
@@ -345,7 +345,7 @@
     <link href="http://controlspace.info/2016/03/hello-world-for-oracle-commerce/"/>
     <id>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</id>
     <published>2016-03-05T18:30:00.000Z</published>
-    <updated>2016-04-13T18:13:34.000Z</updated>
+    <updated>2016-04-29T06:17:08.000Z</updated>
     
     <content type="html">&lt;p&gt;There are so many concepts in Oracle Commerce (previously known as ATG), that makes coming up with Hello World program little difficult. Do you mean to create one JSP page and deploy it like commerce reference store? Do you want to create a component just to see in Dyn/Admin? Do you want to create a hello world repository? Depending on what you want to do, the approach to take will be different.&lt;br&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1633/25195316629_65c8162a37_n.jpg&quot; alt=&quot;Too many options to begin with&quot;&gt;&lt;br&gt;To work with Oracle Commerce, you don’t have to know about persisting data in database. If you approach Oracle Commerce programming with J2EE &amp;amp; MVC experience, you may find it little difficult to cope with it unless you start with a fresh mind, because things are very different in this platform.&lt;/p&gt;
 &lt;p&gt;Today, I will demonstrate how to create a simple component so that it can be viewed in Dyn/Admin. Let us assume that you are trying to create it in your own module instead of existing module like DAS or DAF. Follow the the steps shown below.&lt;/p&gt;
