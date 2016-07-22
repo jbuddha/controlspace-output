@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://controlspace.info/2016/07/nice-tool-for-algorithm-and-datastructure-visualisation/</loc>
+    
+    <lastmod>2016-07-22T17:58:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/</loc>
+    
+    <lastmod>2016-07-22T17:31:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/</loc>
     
     <lastmod>2016-07-22T17:14:59.000Z</lastmod>
@@ -16,13 +30,6 @@
   </url>
   
   <url>
-    <loc>http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/</loc>
-    
-    <lastmod>2016-06-18T13:49:18.242Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/</loc>
     
     <lastmod>2016-06-18T13:49:18.242Z</lastmod>
@@ -30,14 +37,7 @@
   </url>
   
   <url>
-    <loc>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</loc>
-    
-    <lastmod>2016-04-29T06:17:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/</loc>
+    <loc>http://controlspace.info/2016/03/patch-utility-for-perforce/</loc>
     
     <lastmod>2016-04-29T06:17:08.000Z</lastmod>
     
@@ -51,7 +51,14 @@
   </url>
   
   <url>
-    <loc>http://controlspace.info/2016/03/patch-utility-for-perforce/</loc>
+    <loc>http://controlspace.info/2016/03/hello-world-for-oracle-commerce/</loc>
+    
+    <lastmod>2016-04-29T06:17:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://controlspace.info/2016/04/disable-dynadmin-auth-dev-env-oracle-commerce/</loc>
     
     <lastmod>2016-04-29T06:17:08.000Z</lastmod>
     
