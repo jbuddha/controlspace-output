@@ -5,18 +5,18 @@
   <!-- for bing's convenience -->
   <meta name="msvalidate.01" content="18487D0B4A4C57C561C46743ED26C1CA" />
   
-  <title>Print Right View of a Binary Tree without using Recursion | Ctrl+Space</title>
+  <title>Right View of Binary Tree without Recursion | Ctrl+Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="This article shows you how to print right view of a binary tree, which using recursion.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Print Right View of a Binary Tree without using Recursion">
+<meta property="og:title" content="Right View of Binary Tree without Recursion">
 <meta property="og:url" content="http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/index.html">
 <meta property="og:site_name" content="Ctrl+Space">
 <meta property="og:description" content="This article shows you how to print right view of a binary tree, which using recursion.">
 <meta property="og:image" content="https://c1.staticflickr.com/9/8878/28188948920_3c502f1584.jpg">
-<meta property="og:updated_time" content="2016-07-22T15:02:14.000Z">
+<meta property="og:updated_time" content="2016-07-22T15:05:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Print Right View of a Binary Tree without using Recursion">
+<meta name="twitter:title" content="Right View of Binary Tree without Recursion">
 <meta name="twitter:description" content="This article shows you how to print right view of a binary tree, which using recursion.">
 <meta name="twitter:image" content="https://c1.staticflickr.com/9/8878/28188948920_3c502f1584.jpg">
   
@@ -108,7 +108,7 @@ ga('send', 'pageview');
           
   
     <h1 class="article-title" itemprop="name">
-      Print Right View of a Binary Tree without using Recursion
+      Right View of Binary Tree without Recursion
     </h1>
   
 
@@ -130,9 +130,8 @@ ga('send', 'pageview');
 <p>If we encounter a null node, it means we reached end of the current level. We need to print the node dequeued before this node. To acheive this, we keep checking if next node in the queue is a null node by using <code>peek</code> method. As soon as the peek method returns null, it means this is the last node in the current level, we have to print it. If we get a null node, we have to check if there are more nodes to be dequeued, if there are no more nodes, we have reached end of the binary tree, otherwise, we just reached end of current level and more nodes are present in the queue. </p>
 <p>Find the program below.</p>
 <figure class="highlight java"><figcaption><span>Right View of A Binary Tree</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rightView</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue = <span class="keyword">new</span> Queue&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span>(root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        queue.enqueue(root);</span><br><span class="line">        queue.enqueue(<span class="keyword">null</span>);  <span class="comment">// first level is over</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        Node temp = queue.dequeue();</span><br><span class="line">        <span class="keyword">if</span>(temp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(queue.getSize() &gt; <span class="number">0</span>)</span><br><span class="line">                queue.enqueue(<span class="keyword">null</span>);   <span class="comment">// current level is over</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(queue.peek() == <span class="keyword">null</span>)      <span class="comment">// next node is null means end of current level, so print it.</span></span><br><span class="line">            System.out.println(temp.data);</span><br><span class="line">        <span class="keyword">if</span>(temp.left != <span class="keyword">null</span>)</span><br><span class="line">            queue.enqueue(temp.left);</span><br><span class="line">        <span class="keyword">if</span>(temp.right != <span class="keyword">null</span>)</span><br><span class="line">            queue.enqueue(temp.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>BinaryTree siagram is generated by using <a href="http://btv.melezinek.cz/binary-search-tree.html" target="_blank" rel="external">Binary Tree Visualizer</a></p>
 <hr>
-<p>If you are interested in non technical reading: <a href="https://unfurledpages.wordpress.com/2016/06/01/an-escape-or-a-possibilty/" target="_blank" rel="external">An escape or a possibility?</a></p>
+<p>BinaryTree siagram is generated by using <a href="http://btv.melezinek.cz/binary-search-tree.html" target="_blank" rel="external">Binary Tree Visualizer</a></p>
 
         
 
@@ -203,7 +202,7 @@ ga('send', 'pageview');
       <ul>
         
           <li class="recents">
-            <a href="/2016/07/right-view-of-binarytree-without-recursion/">Print Right View of a Binary Tree without using Recursion</a>
+            <a href="/2016/07/right-view-of-binarytree-without-recursion/">Right View of Binary Tree without Recursion</a>
           </li>
         
           <li class="recents">
