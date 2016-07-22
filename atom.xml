@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://controlspace.info/"/>
-  <updated>2016-06-18T13:49:18.242Z</updated>
+  <updated>2016-07-22T15:02:14.000Z</updated>
   <id>http://controlspace.info/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Print Right View of a Binary Tree without using Recursion</title>
+    <link href="http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/"/>
+    <id>http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/</id>
+    <published>2016-07-21T18:30:00.000Z</published>
+    <updated>2016-07-22T15:02:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/9/8878/28188948920_3c502f1584.jpg&quot; alt=&quot;Right View of Binary Tree&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;The-Problem&quot;&gt;&lt;a href=&quot;#The-Problem&quot; class=&quot;headerlink&quot; title=&quot;The Problem&quot;&gt;&lt;/a&gt;The Problem&lt;/h2&gt;&lt;p&gt;Imagine you have a binary tree and wants to get all the nodes that will be visible when seen from the right side of the tree. How do you print all such nodes? Final output for this tree should be 44, 51, 65, 28. In other words, the first nodes we touch upon if we draw horizontal lines from right side of the tree. Read on to find the solution.&lt;/p&gt;
+ &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;The-Solution&quot;&gt;&lt;a href=&quot;#The-Solution&quot; class=&quot;headerlink&quot; title=&quot;The Solution&quot;&gt;&lt;/a&gt;The Solution&lt;/h2&gt;&lt;p&gt;Quicktip, whenever we try to do something without using recursion, you need to use some auxiliary datastructure like Queue or Stack. To solve this problem, we use a queue. &lt;/p&gt;
+&lt;p&gt;To solve this problem, we use a mechanism similar to &lt;a href=&quot;/2016/05/non-recursive-breadth-first-traversal-binary-tree/&quot; title=&quot;Breadth First Traversal&quot;&gt;Breadth First Traversal&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;We start with pushing the root node and a null node into queue, to indicate first level is complete. We begin iterating until queue becomes empty. In every iteration, we dequeue a node, if it is not null node, we enqueue its children to the end of queue. We keep adding until children of all the nodes are added to queue. &lt;/p&gt;
+&lt;p&gt;If we encounter a null node, it means we reached end of the current level. We need to print the node dequeued before this node. To acheive this, we keep checking if next node in the queue is a null node by using &lt;code&gt;peek&lt;/code&gt; method. As soon as the peek method returns null, it means this is the last node in the current level, we have to print it. If we get a null node, we have to check if there are more nodes to be dequeued, if there are no more nodes, we have reached end of the binary tree, otherwise, we just reached end of current level and more nodes are present in the queue. &lt;/p&gt;
+&lt;p&gt;Find the program below.&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Right View of A Binary Tree&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;rightView&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Node root)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Queue&amp;lt;Node&amp;gt; queue = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Queue&amp;lt;&amp;gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(root != &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        queue.enqueue(root);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        queue.enqueue(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;);  &lt;span class=&quot;comment&quot;&gt;// first level is over&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (!queue.isEmpty()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Node temp = queue.dequeue();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(temp == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(queue.getSize() &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                queue.enqueue(&lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;);   &lt;span class=&quot;comment&quot;&gt;// current level is over&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;continue&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(queue.peek() == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;)      &lt;span class=&quot;comment&quot;&gt;// next node is null means end of current level, so print it.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            System.out.println(temp.data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(temp.left != &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            queue.enqueue(temp.left);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(temp.right != &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            queue.enqueue(temp.right);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;BinaryTree siagram is generated by using &lt;a href=&quot;http://btv.melezinek.cz/binary-search-tree.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Binary Tree Visualizer&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;If you are interested in non technical reading: &lt;a href=&quot;https://unfurledpages.wordpress.com/2016/06/01/an-escape-or-a-possibilty/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;An escape or a possibility?&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      This article shows you how to print right view of a binary tree, which using recursion.
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://controlspace.info/tags/java/"/>
+    
+      <category term="problems" scheme="http://controlspace.info/tags/problems/"/>
+    
+      <category term="algorithms" scheme="http://controlspace.info/tags/algorithms/"/>
+    
+      <category term="datastructures" scheme="http://controlspace.info/tags/datastructures/"/>
+    
+      <category term="solutions" scheme="http://controlspace.info/tags/solutions/"/>
+    
+  </entry>
   
   <entry>
     <title>Collapsible panel using OJet &amp; jQuery</title>

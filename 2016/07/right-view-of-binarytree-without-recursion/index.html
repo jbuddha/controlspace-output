@@ -5,18 +5,20 @@
   <!-- for bing's convenience -->
   <meta name="msvalidate.01" content="18487D0B4A4C57C561C46743ED26C1CA" />
   
-  <title>Restricting an ojInputText to accept only numbers | Ctrl+Space</title>
+  <title>Print Right View of a Binary Tree without using Recursion | Ctrl+Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
+  <meta name="description" content="This article shows you how to print right view of a binary tree, which using recursion.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Restricting an ojInputText to accept only numbers">
-<meta property="og:url" content="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/index.html">
+<meta property="og:title" content="Print Right View of a Binary Tree without using Recursion">
+<meta property="og:url" content="http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/index.html">
 <meta property="og:site_name" content="Ctrl+Space">
-<meta property="og:description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
-<meta property="og:updated_time" content="2016-06-18T13:49:18.242Z">
+<meta property="og:description" content="This article shows you how to print right view of a binary tree, which using recursion.">
+<meta property="og:image" content="https://c1.staticflickr.com/9/8878/28188948920_3c502f1584.jpg">
+<meta property="og:updated_time" content="2016-07-22T15:02:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Restricting an ojInputText to accept only numbers">
-<meta name="twitter:description" content="If you have used ojInputText of Oracle Jet framework. You might have observed that it doesn&apos;t provide any way to restrict input, here is a solution that simply removes any non numeric characters if en">
+<meta name="twitter:title" content="Print Right View of a Binary Tree without using Recursion">
+<meta name="twitter:description" content="This article shows you how to print right view of a binary tree, which using recursion.">
+<meta name="twitter:image" content="https://c1.staticflickr.com/9/8878/28188948920_3c502f1584.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Ctrl+Space" type="application/atom+xml">
   
@@ -86,11 +88,11 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-2016/04/restricting-ojinputtext-for-numericals" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2016/07/right-view-of-binarytree-without-recursion" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/restricting-ojinputtext-for-numericals/" class="article-date" style="text-transform: none;">
-  <time datetime="2016-04-21T18:30:00.000Z" itemprop="datePublished">2016-04-22</time>
+      <a href="/2016/07/right-view-of-binarytree-without-recursion/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-07-21T18:30:00.000Z" itemprop="datePublished">2016-07-22</time>
   
       - Buddha
   
@@ -106,7 +108,7 @@ ga('send', 'pageview');
           
   
     <h1 class="article-title" itemprop="name">
-      Restricting an ojInputText to accept only numbers
+      Print Right View of a Binary Tree without using Recursion
     </h1>
   
 
@@ -119,11 +121,18 @@ ga('send', 'pageview');
 
 
       
-        <p>Oracle Jet is a beautiful toolkit for simplifying lot of tasks. ojInputText is a basic editor the framework provides, it can validate the text entered based on the regular expression we give, but validation only happens on blur and if we simply want to filter any keystrokes that don’t match that, we can’t do it by default.</p>
-<p>Here is the result before we go and learn how to do it.<br></p><p data-height="350" data-theme-id="0" data-slug-hash="mErVGe" data-default-tab="result" data-user="jbuddha" data-embed-version="2"  class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/mErVGe/" target="_blank" rel="external">Allow only numbers in OjInputText</a> by Buddha (<a href="http://codepen.io/jbuddha" target="_blank" rel="external">@jbuddha</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script><p></p>
-<p>Ofcourse we can use ojInputNumber and use the example they gave for eating non-numbers, but what if we don’t want the increment and decrement the arrows of ojInputNumber. One way to do it is to bind a keyUp event and check everytime a character is pressed. Infact this is the approach that is used for the example given in OracleJet cookbook.</p>
-<p>Here is an alternative approach using ojInputText. Instead of bindng to value, we can bind to rawValue attribute. This ensures that the observable gets updated on every keystroke. <a id="more"></a>To acheive the result, I have created a helper observable which is a computed observable depending on the value of text box. Whenever a new key is pressed, the computation of helper observable takes place. Here, I used simple javascript regex method to cleanup. Once the cleanup is done, I’m updating the original input text if the value has changed, otherwise I’m leaving it alone. See the below Pen, if you want to see the code and the ojInputText in action.</p>
-<p data-height="350" data-theme-id="0" data-slug-hash="mErVGe" data-default-tab="html" data-user="jbuddha" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/jbuddha/pen/mErVGe/" target="_blank" rel="external">Allow only numbers in OjInputText</a> by Buddha (<a href="http://codepen.io/jbuddha" target="_blank" rel="external">@jbuddha</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        <p><img src="https://c1.staticflickr.com/9/8878/28188948920_3c502f1584.jpg" alt="Right View of Binary Tree"></p>
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Imagine you have a binary tree and wants to get all the nodes that will be visible when seen from the right side of the tree. How do you print all such nodes? Final output for this tree should be 44, 51, 65, 28. In other words, the first nodes we touch upon if we draw horizontal lines from right side of the tree. Read on to find the solution.</p>
+ <a id="more"></a>
+<h2 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h2><p>Quicktip, whenever we try to do something without using recursion, you need to use some auxiliary datastructure like Queue or Stack. To solve this problem, we use a queue. </p>
+<p>To solve this problem, we use a mechanism similar to <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/" title="Breadth First Traversal">Breadth First Traversal</a>. </p>
+<p>We start with pushing the root node and a null node into queue, to indicate first level is complete. We begin iterating until queue becomes empty. In every iteration, we dequeue a node, if it is not null node, we enqueue its children to the end of queue. We keep adding until children of all the nodes are added to queue. </p>
+<p>If we encounter a null node, it means we reached end of the current level. We need to print the node dequeued before this node. To acheive this, we keep checking if next node in the queue is a null node by using <code>peek</code> method. As soon as the peek method returns null, it means this is the last node in the current level, we have to print it. If we get a null node, we have to check if there are more nodes to be dequeued, if there are no more nodes, we have reached end of the binary tree, otherwise, we just reached end of current level and more nodes are present in the queue. </p>
+<p>Find the program below.</p>
+<figure class="highlight java"><figcaption><span>Right View of A Binary Tree</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rightView</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue = <span class="keyword">new</span> Queue&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span>(root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        queue.enqueue(root);</span><br><span class="line">        queue.enqueue(<span class="keyword">null</span>);  <span class="comment">// first level is over</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        Node temp = queue.dequeue();</span><br><span class="line">        <span class="keyword">if</span>(temp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(queue.getSize() &gt; <span class="number">0</span>)</span><br><span class="line">                queue.enqueue(<span class="keyword">null</span>);   <span class="comment">// current level is over</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(queue.peek() == <span class="keyword">null</span>)      <span class="comment">// next node is null means end of current level, so print it.</span></span><br><span class="line">            System.out.println(temp.data);</span><br><span class="line">        <span class="keyword">if</span>(temp.left != <span class="keyword">null</span>)</span><br><span class="line">            queue.enqueue(temp.left);</span><br><span class="line">        <span class="keyword">if</span>(temp.right != <span class="keyword">null</span>)</span><br><span class="line">            queue.enqueue(temp.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>BinaryTree siagram is generated by using <a href="http://btv.melezinek.cz/binary-search-tree.html" target="_blank" rel="external">Binary Tree Visualizer</a></p>
+<hr>
+<p>If you are interested in non technical reading: <a href="https://unfurledpages.wordpress.com/2016/06/01/an-escape-or-a-possibilty/" target="_blank" rel="external">An escape or a possibility?</a></p>
 
         
 
@@ -132,12 +141,12 @@ ga('send', 'pageview');
     </div>
     
       <footer class="article-footer">
-        <a data-url="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/" data-id="ciplf69ka0005ouygdqwr1w4v" class="article-share-link">Share</a>
+        <a data-url="http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/" data-id="ciqxunmk10000eqza2r7re4yl" class="article-share-link">Share</a>
         
-          <a href="http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/#disqus_thread" class="article-comment-link">Comments</a>
+          <a href="http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/#disqus_thread" class="article-comment-link">Comments</a>
         
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oraclejet/">oraclejet</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datastructures/">datastructures</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/problems/">problems</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solutions/">solutions</a></li></ul>
 
       </footer>
     
@@ -146,19 +155,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Breadth First Traversal In a Binary Tree Without Recursion
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/solving-jam-coins/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/06/collapsible-panel-in-oracle-jet/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Generating the Jam Coins</div>
+      <div class="article-nav-title">Collapsible panel using OJet &amp; jQuery</div>
     </a>
   
 </nav>
@@ -252,7 +252,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'controlspace';
   
-  var disqus_url = 'http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/';
+  var disqus_url = 'http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/';
   
   (function(){
     var dsq = document.createElement('script');
