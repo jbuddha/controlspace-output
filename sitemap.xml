@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/</loc>
+    
+    <lastmod>2016-07-23T03:17:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://controlspace.info/css/mystyles.css</loc>
     
     <lastmod>2016-07-23T02:32:35.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://controlspace.info/2016/05/non-recursive-breadth-first-traversal-binary-tree/</loc>
     
     <lastmod>2016-07-23T01:59:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://controlspace.info/2016/07/right-view-of-binarytree-without-recursion/</loc>
-    
-    <lastmod>2016-07-23T01:51:41.000Z</lastmod>
     
   </url>
   
