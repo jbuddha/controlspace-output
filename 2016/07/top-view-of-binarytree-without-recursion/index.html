@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- for bing's convenience -->
+  <meta name="msvalidate.01" content="18487D0B4A4C57C561C46743ED26C1CA" />
+  
+  <title>Top View of Binary Tree from left to right without Recursion | Ctrl+Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This article shows you how to print top view of a binary tree, which using recursion.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Top View of Binary Tree from left to right without Recursion">
+<meta property="og:url" content="http://controlspace.info/2016/07/top-view-of-binarytree-without-recursion/index.html">
+<meta property="og:site_name" content="Ctrl+Space">
+<meta property="og:description" content="This article shows you how to print top view of a binary tree, which using recursion.">
+<meta property="og:updated_time" content="2016-07-23T10:26:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Top View of Binary Tree from left to right without Recursion">
+<meta name="twitter:description" content="This article shows you how to print top view of a binary tree, which using recursion.">
+  
+    <link rel="alternate" href="/atom.xml" title="Ctrl+Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-75818367-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Ctrl+Space</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The Intellisense Every Programmer Needs</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="main-nav-link nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://controlspace.info"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2016/07/top-view-of-binarytree-without-recursion" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/top-view-of-binarytree-without-recursion/" class="article-date" style="text-transform: none;">
+  <time datetime="2016-07-22T18:30:00.000Z" itemprop="datePublished">2016-07-23</time>
+  
+      - Buddha
+  
+</a>
+
+      
+    </div>
+    
+    <div class="article-inner">
+      
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Top View of Binary Tree from left to right without Recursion
+    </h1>
+  
+
+        </header>
+      
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+
+
+      
+        <div style="text-align: center"><br><svg width="100%" viewbox="0 0 700 450"><g transform="translate(262.5,150)" style="z-index: 1; cursor: inherit;"><line class="binary-tree-arrow" x1="67.20" y1="-38.40" x2="-67.20" y2="38.40"/><line x1="-67.20" y1="38.40" x2="-56.28" y2="39.01" class="binary-tree-arrow"/><line x1="-67.20" y1="38.40" x2="-62.18" y2="28.68" class="binary-tree-arrow"/></g><g transform="translate(131.25,250)" style="z-index: 1; cursor: inherit;"><line x1="28.35" y1="-32.40" x2="-28.35" y2="32.40" class="binary-tree-arrow"/><line x1="-28.35" y1="32.40" x2="-17.83" y2="29.42" class="binary-tree-arrow"/><line x1="-28.35" y1="32.40" x2="-26.79" y2="21.58" class="binary-tree-arrow"/></g><g transform="translate(65.62,350)" style="z-index: 1; cursor: inherit;"><line x1="12.50" y1="-28.58" x2="-12.50" y2="28.58" class="binary-tree-arrow"/><line x1="-12.50" y1="28.58" x2="-3.37" y2="22.56" class="binary-tree-arrow"/><line x1="-12.50" y1="28.58" x2="-14.27" y2="17.79" class="binary-tree-arrow"/></g><g transform="translate(218.75,250)" style="z-index: 1; cursor: inherit;"><line x1="-28.35" y1="-32.40" x2="28.35" y2="32.40" class="binary-tree-arrow"/><line x1="28.35" y1="32.40" x2="26.79" y2="21.58" class="binary-tree-arrow"/><line x1="28.35" y1="32.40" x2="17.83" y2="29.42" class="binary-tree-arrow"/></g><g transform="translate(240.62,350)" style="z-index: 1; cursor: inherit;"><line x1="12.50" y1="-28.58" x2="-12.50" y2="28.58" class="binary-tree-arrow"/><line x1="-12.50" y1="28.58" x2="-3.37" y2="22.56" class="binary-tree-arrow"/><line x1="-12.50" y1="28.58" x2="-14.27" y2="17.79" class="binary-tree-arrow"/></g><g transform="translate(437.5,150)" style="z-index: 1; cursor: inherit;"><line x1="-67.20" y1="-38.40" x2="67.20" y2="38.40" class="binary-tree-arrow"/><line x1="67.20" y1="38.40" x2="62.18" y2="28.68" class="binary-tree-arrow"/><line x1="67.20" y1="38.40" x2="56.28" y2="39.01" class="binary-tree-arrow"/></g><g transform="translate(481.25,250)" style="z-index: 1; cursor: inherit;"><line x1="28.35" y1="-32.40" x2="-28.35" y2="32.40" class="binary-tree-arrow"/><line x1="-28.35" y1="32.40" x2="-17.83" y2="29.42" class="binary-tree-arrow"/><line x1="-28.35" y1="32.40" x2="-26.79" y2="21.58" class="binary-tree-arrow"/></g><g transform="translate(568.75,250)" style="z-index: 1; cursor: inherit;"><line x1="-28.35" y1="-32.40" x2="28.35" y2="32.40" class="binary-tree-arrow"/><line x1="28.35" y1="32.40" x2="26.79" y2="21.58" class="binary-tree-arrow"/><line x1="28.35" y1="32.40" x2="17.83" y2="29.42" class="binary-tree-arrow"/></g><g transform="translate(350,100)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -highlight"/><text x="0" dy="0.6ex" y="0">44</text></g><g transform="translate(175,200)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -highlight"/><text x="0" dy="0.6ex" y="0">23</text></g><g transform="translate(87.5,300)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -highlight"/><text x="0" dy="0.6ex" y="0">13</text></g><g transform="translate(43.75,400)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -highlight"/><text x="0" dy="0.6ex" y="0">7</text></g><g transform="translate(262.5,300)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -dull"/><text x="0" dy="0.6ex" y="0">27</text></g><g transform="translate(218.75,400)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -dull"/><text x="0" dy="0.6ex" y="0">26</text></g><g transform="translate(525,200)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -highlight"/><text x="0" dy="0.6ex" y="0">51</text></g><g transform="translate(437.5,300)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -dull"/><text x="0" dy="0.6ex" y="0">50</text></g><g transform="translate(612.5,300)" style="z-index: 3; cursor: pointer;"><circle cx="0" cy="0" r="21.87" class="binary-tree-circle -highlight"/><text x="0" dy="0.6ex" y="0">65</text></g></svg><br><p></p><span class="caption">Top View of Binary Tree</span><br></div>
+
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Imagine you have a binary tree and wants to get all the nodes that will be visible when seen from the top of the tree. How do you print all such nodes? Final output for this tree should be 7, 13, 23, 44, 51, 65. A similar problem about printing right view is given in the previous post about <a href="/2016/07/right-view-of-binarytree-without-recursion/" title="Right View of Binary Tree without Recursion">Right View of Binary Tree without Recursion</a></p>
+ <a id="more"></a>
+<h2 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h2><p>We can use a mechanism similar preorder traversal, but the solution is not as straight forward. When we are printing nodes on left subtree, ignoring all right nodes, we will visit each left node starting from root, however we can’t print them straight away, as we need to print them in reverse order. Otherwise the output will be 44, 23, 13, 7. So, in order to print them in reverse order, we make use of auxiliary datastructure. Stack is what we need in this case. </p>
+<p>We keep pushing left node onto stack until we reach a leaf node while visiting only the left nodes. Once we reach a leaf node, just pop all elements from the stack and print all of them. Once left subtree is complete, print the root node and continue with right subtree. </p>
+<p>Right subtree is much simpler solution, as we have to print the right most nodes in the order we visit them. Begin with root and move to its right node, print the node and continue to its right node. Proceed till the right child becomes null. Find the program below written in java.</p>
+<figure class="highlight java"><figcaption><span>Program to print top view of a Binary Tree</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">topView</span><span class="params">(Node root)</span> </span>&#123;    </span><br><span class="line">    Node temp = root.left;</span><br><span class="line">    Stack&lt;Node&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(temp != <span class="keyword">null</span>) &#123;</span><br><span class="line">        stack.push(temp);</span><br><span class="line">        temp = temp.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty())</span><br><span class="line">        System.out.println(stack.pop().data);</span><br><span class="line"></span><br><span class="line">    System.out.println(root.data);</span><br><span class="line">    temp = root.right;</span><br><span class="line">    <span class="keyword">while</span> (temp != <span class="keyword">null</span>) &#123;</span><br><span class="line">        System.out.println(temp.data);</span><br><span class="line">        temp = temp.right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>What do you think of this solution? Can you think of a simpler solution? Let me know in the comments. </p>
+<hr>
+<p>SVG for BinaryTree diagram is generated by using <a href="http://btv.melezinek.cz/binary-search-tree.html" target="_blank" rel="external">Binary Tree Visualizer</a></p>
+
+        
+
+      
+
+    </div>
+    
+      <footer class="article-footer">
+        <a data-url="http://controlspace.info/2016/07/top-view-of-binarytree-without-recursion/" data-id="ciqz1er7r0000o4zauk293fm2" class="article-share-link">Share</a>
+        
+          <a href="http://controlspace.info/2016/07/top-view-of-binarytree-without-recursion/#disqus_thread" class="article-comment-link">Comments</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithms/">algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datastructures/">datastructures</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/problems/">problems</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solutions/">solutions</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/right-view-of-binarytree-without-recursion/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Right View of Binary Tree without Recursion</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/algorithms/" style="font-size: 16.67px;">algorithms</a> <a href="/tags/atg/" style="font-size: 13.33px;">atg</a> <a href="/tags/codejam/" style="font-size: 10px;">codejam</a> <a href="/tags/competition/" style="font-size: 10px;">competition</a> <a href="/tags/configuration/" style="font-size: 10px;">configuration</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/datastructures/" style="font-size: 16.67px;">datastructures</a> <a href="/tags/hack/" style="font-size: 10px;">hack</a> <a href="/tags/html/" style="font-size: 13.33px;">html</a> <a href="/tags/information/" style="font-size: 10px;">information</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javafx/" style="font-size: 10px;">javafx</a> <a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/knockoutjs/" style="font-size: 10px;">knockoutjs</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/oraclecommerce/" style="font-size: 13.33px;">oraclecommerce</a> <a href="/tags/oraclejet/" style="font-size: 13.33px;">oraclejet</a> <a href="/tags/perforce/" style="font-size: 10px;">perforce</a> <a href="/tags/problems/" style="font-size: 16.67px;">problems</a> <a href="/tags/puzzle/" style="font-size: 10px;">puzzle</a> <a href="/tags/solution/" style="font-size: 13.33px;">solution</a> <a href="/tags/solutions/" style="font-size: 13.33px;">solutions</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a class="widget-title" href="/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li class="recents">
+            <a href="/2016/07/top-view-of-binarytree-without-recursion/">Top View of Binary Tree from left to right without Recursion</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/07/right-view-of-binarytree-without-recursion/">Right View of Binary Tree without Recursion</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/07/nice-tool-for-algorithm-and-datastructure-visualisation/">A Great Tool for Datastructure Algorithm Visualisation</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/06/collapsible-panel-in-oracle-jet/">Collapsible panel using OJet &amp; jQuery</a>
+          </li>
+        
+          <li class="recents">
+            <a href="/2016/05/non-recursive-breadth-first-traversal-binary-tree/">Breadth First Traversal In a Binary Tree Without Recursion</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Buddha Jyothiprasad<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'controlspace';
+  
+  var disqus_url = 'http://controlspace.info/2016/07/top-view-of-binarytree-without-recursion/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+<link rel="stylesheet" href="/css/mystyles.css">
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
