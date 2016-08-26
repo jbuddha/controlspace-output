@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://controlspace.info/about/index.html</loc>
+    
+    <lastmod>2016-08-26T15:31:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://controlspace.info/css/mystyles.css</loc>
     
     <lastmod>2016-07-23T10:47:36.000Z</lastmod>
@@ -37,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/</loc>
+    <loc>http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/</loc>
     
     <lastmod>2016-06-18T13:49:18.242Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://controlspace.info/2016/04/restricting-ojinputtext-for-numericals/</loc>
+    <loc>http://controlspace.info/2016/06/collapsible-panel-in-oracle-jet/</loc>
     
     <lastmod>2016-06-18T13:49:18.242Z</lastmod>
     
@@ -66,13 +73,6 @@
   
   <url>
     <loc>http://controlspace.info/2016/04/solving-jam-coins/</loc>
-    
-    <lastmod>2016-04-29T06:17:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://controlspace.info/about/index.html</loc>
     
     <lastmod>2016-04-29T06:17:08.000Z</lastmod>
     
